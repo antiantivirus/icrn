@@ -1,0 +1,12 @@
+title: Home
+icon: 🏠
+
+columns:
+  - width: 2/3
+    sections:
+      content:
+        type: fields
+        fields:
+          intro:
+            type: textarea
+            label: Intro

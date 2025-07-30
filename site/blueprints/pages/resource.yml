@@ -1,0 +1,27 @@
+title: Resource
+icon: 📕
+
+columns:
+  - width: 2/3
+    fields:
+      description:
+        type: textarea
+      text:
+        type: textarea
+      audio:
+        type: files
+        accept:
+          - audio/*
+        label: Audio Files
+  - width: 1/3
+    fields:
+      authors:
+        type: text
+        label: Authors
+      tags:
+        type: tags
+      stations:
+        type: pages
+        template: station
+        label: Related Stations
+        query: site.find('members')

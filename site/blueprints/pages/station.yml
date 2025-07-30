@@ -1,0 +1,26 @@
+title: Station
+icon: 📡
+
+columns:
+  - width: 1/3
+    fields:
+      logo:
+        type: files
+        multiple: false
+        layout: cards
+        accept:
+          - image/*
+        label: Logo
+  - width: 1/3
+    fields:
+      website:
+        type: url
+      location:
+        type: text
+  - width: 2/3
+    fields:
+      description:
+        type: textarea
+      images:
+        type: files
+        label: Images
