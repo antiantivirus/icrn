@@ -15,6 +15,13 @@ columns:
         label: Audio Files
   - width: 1/3
     fields:
+      cover:
+        type: files
+        layout: cards
+        accept:
+          - image/*
+        label: Cover Image
+        multiple: false
       authors:
         type: text
         label: Authors
