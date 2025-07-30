@@ -1,0 +1,8 @@
+/* Import tailwind and disable automatic source detection */
+@import "tailwindcss" source("../site");
+
+@layer base {
+}
+
+@layer components {
+}

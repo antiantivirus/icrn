@@ -1,0 +1,111 @@
+
+#!/bin/bash
+
+# Kirby CMS Deployment Script
+# This script uses rsync to deploy files to staging or production servers.
+# It supports dry runs and actual deployments, as well as syncing content directories.
+# Usage:
+# ./deploy.sh staging [go]   # Dry run or deploy to staging
+# ./deploy.sh production [go] # Dry run or deploy to production
+# ./deploy.sh sync-staging [go] # Dry run or sync content to staging
+# ./deploy.sh sync-production [go] # Dry run or sync content to production
+
+# CONFIGURATION
+LOCAL_DIR="$(pwd)/"
+
+# Staging
+STAGING_USER=""
+STAGING_HOST=""
+STAGING_PATH=""
+
+# Production
+PROD_USER=""
+PROD_HOST=""
+PROD_PATH=""
+
+# Exclude patterns for full deploy
+EXCLUDES=(
+  ".git/"
+  ".gitignore"
+  "node_modules/"
+  "src"
+  ".env"
+  ".dev"
+  "deploy.sh"
+  "composer.lock"
+  "package.json"
+  "package-lock.json"
+  "yarn.lock"
+  "site/sessions"
+  "site/cache/"
+  "site/accounts"
+  "content"
+  "media"
+)
+
+
+# ---------------------------------------------
+# MAIN
+# ---------------------------------------------
+ERRORSTRING="Whoops! That didn't work. Please check the command you ran."
+
+if [ $# -eq 0 ]; then
+  echo "$ERRORSTRING"
+  exit 1
+fi
+
+# Build rsync exclude flags from EXCLUDES array
+RSYNC_EXCLUDES=""
+for EXCLUDE in "${EXCLUDES[@]}"; do
+  RSYNC_EXCLUDES+="--exclude=$EXCLUDE "
+done
+
+case "$1" in
+  staging)
+    if [[ -z $2 ]]; then
+      echo "[DRY RUN] Deploying to STAGING ($STAGING_HOST:$STAGING_PATH)"
+      rsync -avz --delete $RSYNC_EXCLUDES --dry-run "$LOCAL_DIR" "$STAGING_USER@$STAGING_HOST:$STAGING_PATH"
+    elif [[ "$2" == "go" ]]; then
+      echo "Deploying to STAGING ($STAGING_HOST:$STAGING_PATH)"
+      rsync -avz --delete $RSYNC_EXCLUDES "$LOCAL_DIR" "$STAGING_USER@$STAGING_HOST:$STAGING_PATH"
+    else
+      echo "$ERRORSTRING"
+    fi
+    ;;
+  production)
+    if [[ -z $2 ]]; then
+      echo "[DRY RUN] Deploying to PRODUCTION ($PROD_HOST:$PROD_PATH)"
+      rsync -avz --delete $RSYNC_EXCLUDES --dry-run "$LOCAL_DIR" "$PROD_USER@$PROD_HOST:$PROD_PATH"
+    elif [[ "$2" == "go" ]]; then
+      echo " Deploying to PRODUCTION ($PROD_HOST:$PROD_PATH)"
+      rsync -avz --delete $RSYNC_EXCLUDES "$LOCAL_DIR" "$PROD_USER@$PROD_HOST:$PROD_PATH"
+    else
+      echo "$ERRORSTRING"
+    fi
+    ;;
+  sync-staging)
+    if [[ -z $2 ]]; then
+      echo "[DRY RUN] Syncing content to STAGING ($STAGING_HOST:$STAGING_PATH/content)"
+      rsync -avz --delete --dry-run "${LOCAL_DIR}content/" "$STAGING_USER@$STAGING_HOST:$STAGING_PATH/content/"
+    elif [[ "$2" == "go" ]]; then
+      echo "Syncing content to STAGING ($STAGING_HOST:$STAGING_PATH/content)"
+      rsync -avz --delete "${LOCAL_DIR}content/" "$STAGING_USER@$STAGING_HOST:$STAGING_PATH/content/"
+    else
+      echo "$ERRORSTRING"
+    fi
+    ;;
+  sync-production)
+    if [[ -z $2 ]]; then
+      echo "[DRY RUN] Syncing content to PRODUCTION ($PROD_HOST:$PROD_PATH/content)"
+      rsync -avz --delete --dry-run "${LOCAL_DIR}content/" "$PROD_USER@$PROD_HOST:$PROD_PATH/content/"
+    elif [[ "$2" == "go" ]]; then
+      echo "Syncing content to PRODUCTION ($PROD_HOST:$PROD_PATH/content)"
+      rsync -avz --delete "${LOCAL_DIR}content/" "$PROD_USER@$PROD_HOST:$PROD_PATH/content/"
+    else
+      echo "$ERRORSTRING"
+    fi
+    ;;
+  *)
+    echo "$ERRORSTRING"
+    ;;
+esac
