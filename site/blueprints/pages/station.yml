@@ -21,6 +21,7 @@ columns:
     fields:
       description:
         type: textarea
-      images:
+      pics:
+        label: Images
         type: files
         label: Images
