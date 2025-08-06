@@ -1,0 +1,34 @@
+title: Activity
+icon: 🗞️
+
+options:
+  changeSlug: false
+  changeStatus: false
+  changeTemplate: false
+  changeTitle: false
+  create: false
+  delete: false
+  duplicate: false
+
+columns:
+  - width: 2/3
+    sections:
+      listed:
+        headline: Published
+        type: pages
+        status: listed
+        layout: cards
+        template: post
+  - width: 1/3
+    sections:
+      drafts:
+        headline: Drafts
+        type: pages
+        status: draft
+        template: post
+
+      unlisted:
+        headline: Unlisted
+        type: pages
+        status: unlisted
+        template: post

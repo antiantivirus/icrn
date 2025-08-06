@@ -1,5 +1,5 @@
-title: Resource
-icon: 📕
+title: Post
+icon: 📰
 
 columns:
   - width: 2/3
@@ -8,9 +8,6 @@ columns:
         type: textarea
       content:
         type: textarea
-      media:
-        type: files
-        label: Media
   - width: 1/3
     fields:
       cover:
@@ -30,8 +27,3 @@ columns:
         template: station
         label: Related Stations
         query: site.find('members')
-      related_resources:
-        type: pages
-        template: resource
-        label: Related Resources
-        query: site.find('resources')

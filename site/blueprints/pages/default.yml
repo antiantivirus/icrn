@@ -1,4 +1,5 @@
 title: Default Page
+icon: 📃
 
 columns:
   main:
@@ -18,4 +19,3 @@ columns:
         template: default
       files:
         type: files
-
