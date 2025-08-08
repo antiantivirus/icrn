@@ -14,7 +14,7 @@ Autoplay
 
 -->
 
-<div class="grid md:grid-cols-2 p-5 gap-10 max-w-[83.33vw] mx-auto items-center justify-items-center">
+<div class="mx-auto relative max-w-[83.33vw] mt-40">
   <svg class="network-diagram" viewBox="0 0 558 205" xmlns="http://www.w3.org/2000/svg">
     <circle class="network-node" cx="16.6016" cy="168.827" r="16"></circle>
     <circle class="network-node" cx="42.6738" cy="166.85" r="16"></circle>
@@ -80,13 +80,13 @@ Autoplay
       <circle id="hoverCircle" r="16" fill="#F8661B" opacity="1">
       </circle>
       <circle id="hoverWave" r="14" fill="none" stroke="#F8661B" stroke-width="2" opacity="0">
-        <animate attributeName="r" values="14;24" dur="1s" repeatCount="indefinite" />
+        <animate attributeName="r" values="14;20" dur="1s" repeatCount="indefinite" />
         <animate attributeName="opacity" values="1;0" dur="1s" repeatCount="indefinite" />
       </circle>
     </g>
   </svg>
 
-  <div>
+  <div class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-100 pointer-events-none mix-blend-exclusion">
     <img class="aspect-4/3 object-cover" id="image" src="/assets/icrn-mic.jpg" />
     <p id="text">-</p>
   </div>
