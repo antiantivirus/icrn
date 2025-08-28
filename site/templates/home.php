@@ -17,8 +17,15 @@
   </div>
 </section>
 
-<section>
+<section class="px-15">
   <h3>Members</h3>
+  <div class="flex">
+    <?php foreach ($stations as $member): ?>
+      <a href="<?= $member->url() ?>" class="inline-block mx-10 grayscale hover:grayscale-0" target="_blank" rel="noopener">
+        <?= $member->name() ?>
+      </a>
+    <?php endforeach; ?>
+  </div>
 </section>
 
 <?php snippet('footer'); ?>

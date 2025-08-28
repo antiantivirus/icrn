@@ -1,5 +1,24 @@
 title: Site
 
-sections:
+tabs:
   pages:
+    label: Pages
+    icon: page
     type: pages
+  menu:
+    label: Menu
+    icon: grid-top
+    fields:
+      mainMenu:
+        label: Main Menu
+        type: pages
+        multiple: true
+        required: true
+  footer:
+    label: Footer
+    icon: grid-bottom
+    fields:
+      legal:
+        label: Legal
+        type: textarea
+        help: Legal text for site footer

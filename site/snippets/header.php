@@ -24,4 +24,11 @@
 </head>
 
 <body>
+  <header class="fixed top-0 left-0 w-full z-50 mt-4">
+    <div class="flex justify-between mx-4">
+      <div></div>
+      <?= snippet('views/menu') ?>
+    </div>
+    <?= snippet('views/player') ?>
+  </header>
   <main>

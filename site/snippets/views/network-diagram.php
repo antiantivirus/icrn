@@ -88,7 +88,7 @@ Autoplay
 
   <div>
     <img class="aspect-4/3 object-cover" id="image" src="/assets/icrn-mic.jpg" />
-    <p id="text">-</p>
+    <p id="text" class="mt-1">-</p>
   </div>
 </div>
 
