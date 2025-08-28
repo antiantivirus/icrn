@@ -11,6 +11,7 @@ return function ($site, $page, $kirby) {
       'title' => $station->title()->value() . ' / ' . $station->location()->value(),
       'image' => $station->pics()->first()->toFile()->url(),
       'url' => $station->url(),
+      'colour' => $station->colour()->value(),
     ];
   }
 

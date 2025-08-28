@@ -14,8 +14,19 @@
   --color-blue: #01b4ff;
   --color-green: #36b250;
   --color-dark-blue: #4653a4;
+  --shadow-green: 0 0 100px 50px #a2ff00;
 
   --font-family-sans: "Apfel Grotesk", "sans-serif";
+
+  --animate-spin-slow: spin 15s linear infinite;
+  @keyframes spin-slow {
+    from: {
+      transform: rotate(0deg);
+    }
+    to: {
+      transform: rotate(360deg);
+    }
+  }
 }
 
 @layer base {
@@ -49,6 +60,11 @@
 
   a:hover {
     @apply underline;
+  }
+
+  a,
+  button {
+    cursor: pointer;
   }
 
   @media screen and (min-width: 640px) {

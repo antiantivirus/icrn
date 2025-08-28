@@ -87,7 +87,7 @@ Autoplay
   </svg>
 
   <div>
-    <img class="aspect-4/3 object-cover" id="image" src="/assets/icrn-mic.jpg" />
+    <img class="aspect-4/3 object-cover shadow-green" id="image" src="/assets/icrn-mic.jpg" />
     <p id="text" class="mt-1">-</p>
   </div>
 </div>
