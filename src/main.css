@@ -1,7 +1,61 @@
 /* Import tailwind and disable automatic source detection */
 @import "tailwindcss" source("../site");
 
+@font-face {
+  font-family: "Apfel Grotesk";
+  src: url("/fonts/apfel-grotesk.woff2") format("woff2");
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --color-bright-green: #a2ff00;
+  --color-orange: #f8661b;
+  --color-blue: #01b4ff;
+  --color-green: #36b250;
+  --color-dark-blue: #4653a4;
+}
+
 @layer base {
+  body {
+    font-family: "Apfel Grotesk", "sans-serif";
+    font-size: 1rem; /* 16px */
+    line-height: 1rem; /* 16px */
+    background: white;
+    color: black;
+  }
+
+  h1 {
+    font-size: 1.5rem; /* 24px */
+    line-height: 1.5rem; /* 24px */
+    font-weight: medium;
+  }
+
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  a {
+    font-size: 1.25rem; /* 20px */
+    line-height: 1.25rem; /* 20px */
+  }
+
+  @media screen and (min-width: 640px) {
+    h1 {
+      font-size: 2.5rem; /* 40px */
+      line-height: 2.5rem; /* 40px */
+    }
+
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-size: 1.5rem; /* 24px */
+      line-height: 1.5rem; /* 24px */
+    }
+  }
 }
 
 @layer components {

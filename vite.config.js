@@ -1,4 +1,5 @@
 // vite.config.js
+import { resolve } from 'path'
 import kirby from 'vite-plugin-kirby'
 import tailwindcss from '@tailwindcss/vite'
 

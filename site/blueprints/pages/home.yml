@@ -10,3 +10,11 @@ columns:
           intro:
             type: textarea
             label: Intro
+          collage:
+            type: files
+            multiple: false
+          graphic:
+            label: Graphic
+            description: Graphical element for seperating header from contents below
+            type: files
+            multiple: false

@@ -14,7 +14,7 @@ Autoplay
 
 -->
 
-<div class="grid md:grid-cols-2 p-5 gap-10 max-w-[83.33vw] mx-auto items-center justify-items-center">
+<div class="grid md:grid-cols-2 p-5 gap-15 lg:gap-30 max-w-[83.33vw] mx-auto items-center justify-items-center">
   <svg class="network-diagram" viewBox="0 0 558 205" xmlns="http://www.w3.org/2000/svg">
     <circle class="network-node" cx="16.6016" cy="168.827" r="16"></circle>
     <circle class="network-node" cx="42.6738" cy="166.85" r="16"></circle>
