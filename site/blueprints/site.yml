@@ -4,20 +4,18 @@ tabs:
   pages:
     label: Pages
     icon: page
-    type: pages
-  menu:
-    label: Menu
-    icon: grid-top
+    sections:
+      pages:
+        type: pages
+  settings:
+    label: settings
+    icon: settings
     fields:
       mainMenu:
         label: Main Menu
         type: pages
         multiple: true
         required: true
-  footer:
-    label: Footer
-    icon: grid-bottom
-    fields:
       legal:
         label: Legal
         type: textarea

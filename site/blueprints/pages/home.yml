@@ -14,7 +14,7 @@ columns:
             type: files
             multiple: false
           graphic:
-            label: Graphic
+            label: Divider graphic
             description: Graphical element for seperating header from contents below
             type: files
             multiple: false

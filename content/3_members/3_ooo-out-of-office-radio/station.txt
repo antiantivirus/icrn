@@ -1,4 +1,4 @@
-Title: OOO (Out of Office) Radio
+Title: Out of Office Radio
 
 ----
 
@@ -11,6 +11,10 @@ Website: https://oooradio.live/
 ----
 
 Location: Helsinki, Finland
+
+----
+
+Colour: #004360
 
 ----
 

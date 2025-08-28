@@ -2,14 +2,14 @@
 
 <?php if ($menuItems->isNotEmpty()): ?>
   <nav>
-    <ul class="flex">
-      <?php foreach ($menuItems as $item): ?>
+    <ul class="flex large-text">
+      <?php
+      $index = 0;
+      foreach ($menuItems as $item): ?>
         <li>
           <a class="hover:underline <?= r($item->isActive(), 'underline') ?>"
-            href="<?= $item->url() ?>"><?= $item->title()->html() ?></a>
-          <?php if (!$item->isLast()): ?>
-            ,&nbsp;
-          <?php endif; ?>
+            href="<?= $item->url() ?>"><?= $item->title()->html() ?></a><?php if ($index < $menuItems->count() - 1): ?>,&nbsp;<?php endif; ?>
+          <?php $index++; ?>
         </li>
       <?php endforeach ?>
     </ul>

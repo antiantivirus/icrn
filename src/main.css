@@ -3,7 +3,7 @@
 
 @font-face {
   font-family: "Apfel Grotesk";
-  src: url("/fonts/apfel-grotesk.woff2") format("woff2");
+  src: url("fonts/apfel.woff2") format("woff2");
   font-style: normal;
   font-display: swap;
 }
@@ -14,6 +14,8 @@
   --color-blue: #01b4ff;
   --color-green: #36b250;
   --color-dark-blue: #4653a4;
+
+  --font-family-sans: "Apfel Grotesk", "sans-serif";
 }
 
 @layer base {
@@ -23,15 +25,17 @@
   body {
     font-family: "Apfel Grotesk", "sans-serif";
     font-size: 1rem; /* 16px */
-    line-height: 1rem; /* 16px */
+    line-height: 1.3125rem; /* 21px */
+    line-height: auto;
     background: white;
     color: black;
   }
 
-  h1 {
+  h1,
+  .h1 {
     font-size: 1.5rem; /* 24px */
-    line-height: 1.5rem; /* 24px */
-    font-weight: medium;
+    line-height: 1.9375rem; /* 31px */
+    font-weight: bold;
   }
 
   h2,
@@ -39,24 +43,34 @@
   h4,
   h5,
   h6,
-  a {
+  .large-text {
     font-size: 1.25rem; /* 20px */
-    line-height: 1.25rem; /* 20px */
+  }
+
+  a:hover {
+    @apply underline;
   }
 
   @media screen and (min-width: 640px) {
-    h1 {
+    body {
+      font-size: 1.25rem; /* 20px */
+      line-height: 1.625rem; /* 26px */
+    }
+
+    h1,
+    .h1 {
       font-size: 2.5rem; /* 40px */
-      line-height: 2.5rem; /* 40px */
+      line-height: 3.1875rem; /* 51px */
     }
 
     h2,
     h3,
     h4,
     h5,
-    h6 {
+    h6,
+    .large-text {
       font-size: 1.5rem; /* 24px */
-      line-height: 1.5rem; /* 24px */
+      line-height: 1.9375rem; /* 31px */
     }
   }
 }

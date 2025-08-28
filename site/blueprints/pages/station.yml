@@ -17,11 +17,17 @@ columns:
         type: url
       location:
         type: text
+      colour:
+        type: color
+        label: Colour
+        required: true
   - width: 2/3
     fields:
       description:
         type: textarea
+        required: true
       pics:
         label: Images
         type: files
         label: Images
+        required: true

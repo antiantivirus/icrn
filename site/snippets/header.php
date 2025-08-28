@@ -18,6 +18,8 @@
 
   <link rel="shortcut icon" type="image/x-icon" href="<?= url('favicon.ico') ?>">
 
+  <link rel="preload" href="<?= vite()->file('fonts/apfel.woff2') ?>" as="font" type="font/woff2" crossorigin>
+
   <?= vite()->css('main.css') ?>
   <?= vite()->js('main.js') ?>
 
@@ -26,7 +28,13 @@
 <body>
   <header class="fixed top-0 left-0 w-full z-50 mt-4">
     <div class="flex justify-between mx-4">
-      <div></div>
+      <div>
+        <?php if (!$page->isHomePage()): ?>
+          <a href="<?= $site->url() ?>">
+            <img src="/assets/images/icrn-dots-logo.svg" alt="Home">
+          </a>
+        <?php endif; ?>
+      </div>
       <?= snippet('views/menu') ?>
     </div>
     <?= snippet('views/player') ?>

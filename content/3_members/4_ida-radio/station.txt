@@ -14,6 +14,10 @@ Location: Tallinn, Estonia
 
 ----
 
+Colour: #83ff6a
+
+----
+
 Description:
 
 IDA Radio is an independent cultural platform that operates as an online radio and event producer. It was first founded in Tallinn, Estonia May 1st 2018 and have since expanded to Helsinki, Finland in 2020.
