@@ -92,4 +92,24 @@
 }
 
 @layer components {
+  /* Page-specific background colors using data attributes */
+  body[data-page="about"] {
+    background-color: var(--color-green);
+  }
+
+  body[data-page="newsletter"] {
+    background-color: var(--color-orange);
+  }
+
+  body[data-page="members"] {
+    background-color: var(--color-blue);
+  }
+
+  body[data-page="resources"] {
+    background-color: var(--color-blue);
+  }
+
+  body[data-page="activity"] {
+    background-color: var(--color-green);
+  }
 }

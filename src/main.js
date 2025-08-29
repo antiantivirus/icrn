@@ -1,49 +1,44 @@
-// Alpine.js and HTMX are now loaded via CDN
-// Custom JavaScript for the application
-
 document.addEventListener('DOMContentLoaded', function () {
-  // Custom JavaScript initialization
-  console.log('ICRN app initialized');
-
-  // Update menu active states on HTMX navigation
-  function updateMenuActiveState() {
+  // Update logo visibility based on current path
+  function updateLogoVisibility() {
     const currentPath = window.location.pathname;
-    const menuLinks = document.querySelectorAll('nav a');
+    const homeLogo = document.getElementById('home-logo');
 
-    menuLinks.forEach(link => {
-      const href = link.getAttribute('href');
-      link.classList.remove('underline');
-      if (href === currentPath || (currentPath === '/' && href === '/')) {
-        link.classList.add('underline');
+    if (homeLogo) {
+      if (currentPath === '/' || currentPath === '') {
+        homeLogo.style.display = 'none';
+      } else {
+        homeLogo.style.display = 'block';
       }
-    });
+    }
   }
 
-  // HTMX event handlers to preserve Alpine state
-  document.addEventListener('htmx:beforeSwap', function (evt) {
-    // Before swapping content, preserve any Alpine state if needed
-    console.log('HTMX: Before content swap');
-  });
-
-  document.addEventListener('htmx:afterSettle', function (evt) {
-    // After new content is settled, reinitialize any JavaScript
-    console.log('HTMX: After content settled');
-
-    // Update menu active state
-    updateMenuActiveState();
-
-    // Reinitialize Alpine.js for new content
-    if (window.Alpine) {
-      window.Alpine.initTree(evt.detail.elt);
+  // Update body background color based on current page
+  function updatePageBackground() {
+    const currentPath = window.location.pathname;
+    const body = document.body;
+    if (currentPath.includes('/about')) {
+      body.setAttribute('data-page', 'about');
+    } else if (currentPath.includes('/newsletter')) {
+      body.setAttribute('data-page', 'newsletter');
+    } else {
+      body.setAttribute('data-page', 'default');
     }
+  }
+
+  // Handle HTMX content swaps
+  document.addEventListener('htmx:afterSettle', function (evt) {
+    updateLogoVisibility();
+    updatePageBackground();
   });
 
   // Handle navigation state updates
   document.addEventListener('htmx:historyRestore', function (evt) {
-    console.log('HTMX: History restored');
-    updateMenuActiveState();
+    updateLogoVisibility();
+    updatePageBackground();
   });
 
-  // Initial menu state
-  updateMenuActiveState();
+  // Initial setup
+  updateLogoVisibility();
+  updatePageBackground();
 });

@@ -36,17 +36,17 @@
 <body>
   <!-- Persistent header with player and menu -->
   <header class="fixed top-0 left-0 w-full z-50 mt-4">
-    <div class="flex justify-between mx-4">
-      <div>
-        <?php if (!$page->isHomePage()): ?>
-          <a href="<?= $site->url() ?>" hx-get="<?= $site->url() ?>" hx-target="#main-content" hx-push-url="true">
-            <img src="/assets/images/icrn-dots-logo.svg" alt="Home">
-          </a>
-        <?php endif; ?>
+    <div class="flex justify-between">
+      <div class="mx-4">
+        <a id="home-logo" href="<?= $site->url() ?>" hx-get="<?= $site->url() ?>" hx-target="#main-content" hx-push-url="true" style="display: none;">
+          <img src="/assets/images/icrn-dots-logo.svg" alt="Home">
+        </a>
       </div>
-      <?= snippet('views/menu') ?>
+      <div>
+        <?= snippet('views/menu') ?>
+        <?= snippet('views/player') ?>
+      </div>
     </div>
-    <?= snippet('views/player') ?>
   </header>
 
   <!-- Main content area that will be swapped -->

@@ -1,13 +1,13 @@
 <?php $menuItems = $site->mainMenu()->toPages(); ?>
 
 <?php if ($menuItems->isNotEmpty()): ?>
-  <nav>
+  <nav class="mx-4">
     <ul class="flex large-text">
       <?php
       $index = 0;
       foreach ($menuItems as $item): ?>
         <li>
-          <a class="hover:underline <?= r($item->isActive(), 'underline') ?>"
+          <a class="hover:underline"
             href="<?= $item->url() ?>"
             hx-get="<?= $item->url() ?>"
             hx-target="#main-content"
