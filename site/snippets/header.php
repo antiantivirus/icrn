@@ -21,16 +21,25 @@
   <link rel="preload" href="<?= vite()->file('fonts/apfel.woff2') ?>" as="font" type="font/woff2" crossorigin>
 
   <?= vite()->css('main.css') ?>
+
+  <!-- HTMX -->
+  <script src="https://unpkg.com/htmx.org@2.0.2"></script>
+
+  <!-- Alpine.js -->
+  <script defer src="https://unpkg.com/@alpinejs/focus@3.14.9/dist/cdn.min.js"></script>
+  <script defer src="https://unpkg.com/alpinejs@3.14.9/dist/cdn.min.js"></script>
+
   <?= vite()->js('main.js') ?>
 
 </head>
 
 <body>
+  <!-- Persistent header with player and menu -->
   <header class="fixed top-0 left-0 w-full z-50 mt-4">
     <div class="flex justify-between mx-4">
       <div>
         <?php if (!$page->isHomePage()): ?>
-          <a href="<?= $site->url() ?>">
+          <a href="<?= $site->url() ?>" hx-get="<?= $site->url() ?>" hx-target="#main-content" hx-push-url="true">
             <img src="/assets/images/icrn-dots-logo.svg" alt="Home">
           </a>
         <?php endif; ?>
@@ -39,4 +48,6 @@
     </div>
     <?= snippet('views/player') ?>
   </header>
-  <main>
+
+  <!-- Main content area that will be swapped -->
+  <main id="main-content">

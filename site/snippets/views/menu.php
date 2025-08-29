@@ -8,7 +8,10 @@
       foreach ($menuItems as $item): ?>
         <li>
           <a class="hover:underline <?= r($item->isActive(), 'underline') ?>"
-            href="<?= $item->url() ?>"><?= $item->title()->html() ?></a><?php if ($index < $menuItems->count() - 1): ?>,&nbsp;<?php endif; ?>
+            href="<?= $item->url() ?>"
+            hx-get="<?= $item->url() ?>"
+            hx-target="#main-content"
+            hx-push-url="true"><?= $item->title()->html() ?></a><?php if ($index < $menuItems->count() - 1): ?>,&nbsp;<?php endif; ?>
           <?php $index++; ?>
         </li>
       <?php endforeach ?>
