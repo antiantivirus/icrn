@@ -1,0 +1,9 @@
+Title: Newsletter
+
+----
+
+Text: <iframe height="300" src="https://dashboard.mailerlite.com/forms/90645/123923689588655491/share" ></iframe>
+
+----
+
+Uuid: xgdrvfoqvcahohkw

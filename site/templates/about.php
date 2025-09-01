@@ -1,12 +1,4 @@
-<?php
-// Check if this is an HTMX request (partial page load)
-$isHtmxRequest = isset($_SERVER['HTTP_HX_REQUEST']);
-
-if (!$isHtmxRequest) {
-  // Full page load - include header
-  snippet('header');
-}
-?>
+<?php snippet('header') ?>
 
 <div class="pt-40 md:pt-80">
   <article class="max-w-prose mx-auto prose">
@@ -18,10 +10,4 @@ if (!$isHtmxRequest) {
   </article>
 </div>
 
-
-<?php
-if (!$isHtmxRequest) {
-  // Full page load - include footer
-  snippet('footer');
-}
-?>
+<?php snippet('footer') ?>

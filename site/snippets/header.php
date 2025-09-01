@@ -29,16 +29,22 @@
   <script defer src="https://unpkg.com/@alpinejs/focus@3.14.9/dist/cdn.min.js"></script>
   <script defer src="https://unpkg.com/alpinejs@3.14.9/dist/cdn.min.js"></script>
 
+
   <?= vite()->js('main.js') ?>
 
 </head>
 
-<body>
+<body
+  hx-boost="true"
+  hx-target="#main"
+  hx-select="#main"
+  hx-swap="outerHTML"
+  hx-ext="preload">
   <!-- Persistent header with player and menu -->
   <header class="fixed top-0 left-0 w-full z-50 mt-4">
     <div class="flex justify-between">
       <div class="mx-4">
-        <a id="home-logo" href="<?= $site->url() ?>" hx-get="<?= $site->url() ?>" hx-target="#main-content" hx-push-url="true" style="display: none;">
+        <a id="home-logo" href="<?= $site->url() ?>" style="display: none;">
           <img src="/assets/images/icrn-dots-logo.svg" alt="Home">
         </a>
       </div>
@@ -50,4 +56,4 @@
   </header>
 
   <!-- Main content area that will be swapped -->
-  <main id="main-content">
+  <main id="main">

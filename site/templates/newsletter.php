@@ -5,8 +5,10 @@
     <div class="w-10 h-10 rounded-full bg-blue mt-1"></div>
     <?= $page->title() ?>
   </h1>
-  <?= $page->text()->kt() ?>
-
+  <style type="text/css">
+    @import url("https://assets.mlcdn.com/fonts.css?version=1721302");
+  </style>
+  <?php snippet('views/newsletter') ?>
 </div>
 
 <?php snippet('footer') ?>

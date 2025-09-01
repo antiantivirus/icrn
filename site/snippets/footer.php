@@ -7,8 +7,7 @@
       <ul>
         <?php foreach ($site->children()->listed() as $item): ?>
           <li>
-            <a class="hover:underline" href="<?= $item->url() ?>"
-              hx-get="<?= $item->url() ?>" hx-target="#main-content" hx-push-url="true"><?= $item->title()->html() ?></a>
+            <a class="hover:underline" href="<?= $item->url() ?>"><?= $item->title()->html() ?></a>
           </li>
         <?php endforeach; ?>
       </ul>

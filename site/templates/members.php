@@ -5,7 +5,7 @@
     <div class="w-10 h-10 rounded-full bg-blue mt-1"></div>
     <?= $page->title() ?>
   </h1>
-  <?= $page->text()->kt() ?>
+  <p>~~~ coming soon ~~~</p>
 
 </div>
 
