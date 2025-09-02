@@ -16,7 +16,7 @@
   <meta property="og:description" content="">
   <meta property="og:image" content="">
 
-  <link rel="shortcut icon" type="image/x-icon" href="<?= url('favicon.ico') ?>">
+  <link rel="shortcut icon" type="image/x-icon" href="<?= url('/assets/favicon.png') ?>">
 
   <link rel="preload" href="<?= vite()->file('fonts/apfel.woff2') ?>" as="font" type="font/woff2" crossorigin>
 
