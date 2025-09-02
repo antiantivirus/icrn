@@ -41,18 +41,16 @@
   hx-swap="outerHTML"
   hx-ext="preload">
   <!-- Persistent header with player and menu -->
-  <header class="fixed top-0 left-0 w-full z-50 mt-4">
-    <div class="flex justify-between">
-      <div class="mx-4">
-        <a id="home-logo" href="<?= $site->url() ?>" style="display: none;">
-          <img src="/assets/images/icrn-dots-logo.svg" alt="Home">
-        </a>
+  <header class="fixed top-0 left-0 w-full z-50 mt-2 lg:mt-4">
+    <div class="flex justify-between mx-4">
+      <div>
+        <?= snippet('views/logo') ?>
       </div>
       <div>
         <?= snippet('views/menu') ?>
-        <?= snippet('views/player') ?>
       </div>
     </div>
+    <?= snippet('views/player') ?>
   </header>
 
   <!-- Main content area that will be swapped -->

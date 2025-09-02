@@ -1,12 +1,15 @@
 <?php snippet('header') ?>
 
-<div class="pt-40 md:pt-80">
-  <article class="max-w-prose mx-auto prose">
-    <h1 class="pb-4 lg:pb-8 flex gap-2.5 items-center">
-      <div class="w-10 h-10 rounded-full bg-blue mt-1"></div>
+<div class="pt-40 md:pt-80 px-4 lg:px-10">
+  <article class="max-w-prose mx-auto prose space-y-5 lg:space-y-10 prose">
+    <h1 class="blob before:bg-blue">
       <?= $page->title() ?>
     </h1>
-    <?= $page->text()->kt() ?>
+    <?php foreach ($page->text()->toBlocks() as $block): ?>
+      <div id="<?= $block->id() ?>" class="block block-type-<?= $block->type() ?>">
+        <?= $block ?>
+      </div>
+    <?php endforeach ?>
   </article>
 </div>
 

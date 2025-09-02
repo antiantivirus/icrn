@@ -89,7 +89,7 @@ Autoplay
 
     <div>
       <img class="aspect-4/3 object-cover shadow-green network-image" src="/assets/icrn-mic.jpg" />
-      <p class="mt-1 network-text">&nbsp;</p>
+      <p class="mt-1 network-text">-</p>
     </div>
   </div>
 </network-diagram>
@@ -227,7 +227,7 @@ Autoplay
 
     deactivateNode() {
       this.image.src = '/assets/icrn-mic.jpg';
-      this.text.innerHTML = "&nbsp;";
+      this.text.innerHTML = "-";
       this.hoverEffect.style.display = 'none';
     }
 

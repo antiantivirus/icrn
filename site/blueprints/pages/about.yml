@@ -18,5 +18,14 @@ columns:
         type: fields
         fields:
           text:
-            type: textarea
+            label: Content
+            type: blocks
             size: huge
+            default:
+              - type: heading
+                content:
+                  level: h2
+                  text: A heading
+              - type: text
+                content:
+                  text: Write something great…

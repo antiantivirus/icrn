@@ -67,6 +67,11 @@
     cursor: pointer;
   }
 
+  .text-tiny {
+    font-size: 0.8rem; /* 14px */
+    line-height: 1rem; /* 19px */
+  }
+
   @media screen and (min-width: 640px) {
     body {
       font-size: 1.25rem; /* 20px */
@@ -111,5 +116,10 @@
 
   body[data-page="activity"] {
     background-color: var(--color-green);
+  }
+
+  .blob::before {
+    content: "";
+    @apply w-5 h-5 lg:w-10 lg:h-10 rounded-full inline-block lg:align-[-10%] align-[-8%];
   }
 }

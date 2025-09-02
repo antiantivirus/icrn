@@ -1,11 +1,10 @@
 <?php snippet('header') ?>
 
-<div class="pt-40 md:pt-80 px-10 h-screen">
-  <h1 class="flex items-center gap-3 mb-12">
-    <div class="w-10 h-10 rounded-full bg-blue mt-1"></div>
+<div class="pt-40 md:pt-80 px-4 lg:px-10 h-screen">
+  <h1 class="blob before:bg-blue mb-10">
     <?= $page->title() ?>
   </h1>
-  <?= $page->text()->kt() ?>
+  <p>~~ Coming soon. New website under construction ~~</p>
 
 </div>
 

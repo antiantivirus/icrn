@@ -2,33 +2,161 @@ Title: About
 
 ----
 
-Text:
-
-The Independent Community Radio Network (ICRN) is a non-profit organisation and web radio network founded in 2022. We connect and support radios from across Europe to foster sustainability, cross-regional collaboration, and knowledge-sharing in independent radio and community media. While our roots are in the Baltic-Nordic region, our network has expanded internationally, reflecting the growing need for cooperation in our field.
-
-Our activities include network meetings, capacity-building workshops, and the creation of research and resources focused on web radio and the local communities of our members. We actively support underrepresented voices, ensuring our work reflects the diverse social groups our members serve. Through public knowledge-sharing, we aim to break competitiveness in community media and create an environment for cross-influencing. We approach our work creatively, and see this as an essential part of working together.
-
-ICRN extends beyond digital platforms, with key collaborations at European Media Lab, Le Guess Who? Festival, NARA, and Reset Network. Our current activities are supported by Nordic Culture Point, and we are governed by a democratically elected board, with annual re-elections for transparency. Our operations are maintained by a legal representative and freelancers, and while our operating language is English, we embrace the linguistic and cultural diversity of our members.
-
-ICRN became a legal entity registered in Lithuania in 2024.
-
-
-### Join ICRN
-
-Want to become a member of our vibrant network?
-
-Send an email to membership@icrn.live with a brief summary of the following questions and link to your website. We review applications monthly and aim to respond within 30 working days.
-
-Please briefly describe your radio station: your focus, geography and radio community.
-Tell us why you would like to join ICRN: what are you looking to gain from the collaboration and what could you contribute to our community?
-In a few words, explain your radio’s legal status and independence.
-Please indicate which membership level you are applying for:
-ICRN Member (€120 annually – for radio stations)
-ICRN Support Member (€60 annually – open to radio stations, organisations, networks, and individuals)
-Note: Fees can be paid annually or monthly and are used to support the basic operating costs of the network. If you want to join the network but are experiencing financial difficulties, please let us know in your application. We are happy to discuss options.
-
-Thank you for your interest in ICRN!
+Text: [{"content":{"text":"<p>The Independent Community Radio Network (ICRN) is a non-profit organisation and web radio network founded in 2022. We connect and support radios from across Europe to foster sustainability, cross-regional collaboration, and knowledge-sharing in independent radio and community media.</p><p>While our roots are in the Baltic-Nordic region, our network has expanded internationally, reflecting the growing need for cooperation in our field.  Our activities include network meetings, capacity-building workshops, and the creation of research and resources focused on web radio and the local communities of our members. We actively support underrepresented voices, ensuring our work reflects the diverse social groups our members serve. Through public knowledge-sharing, we aim to break competitiveness in community media and create an environment for cross-influencing. We approach our work creatively, and see this as an essential part of working together.</p><p>We review applications monthly and aim to respond within 30 working days.  Please briefly describe your radio station: your focus, geography and radio community. Tell us why you would like to join ICRN: what are you looking to gain from the collaboration and what could you contribute to our community? In a few words, explain your radio’s legal status and independence. Please indicate which membership level you are applying for: ICRN Member (€120 annually – for radio stations) ICRN Support Member (€60 annually – open to radio stations, organisations, networks, and individuals) Note: Fees can be paid annually or monthly and are used to support the basic operating costs of the network. If you want to join the network but are experiencing financial difficulties, please let us know in your application. We are happy to discuss options.  Thank you for your interest in ICRN!</p>"},"id":"f66917b3-8c3c-4c96-855c-8bbf10d8bd77","isHidden":false,"type":"text"},{"content":{"location":"kirby","image":["file://vy5v0i7dhwzbdhoc"],"src":"","alt":"","caption":"ICRN meetup at IDA Radio, Tallinn","link":"","ratio":"","crop":"false"},"id":"3fc0a13a-c4ad-43d7-84b0-108b08df282c","isHidden":false,"type":"image"},{"content":{"level":"h3","text":"Supporters"},"id":"2b92911f-789e-4557-bcf0-dc516a210189","isHidden":false,"type":"heading"},{"content":{"images":["file://e1c4wxpc6h1ppggo","file://7yscglmhe74z9zyg","file://sfhqv3lplriwgps8"],"caption":"","ratio":"","crop":"false"},"id":"a65943d6-992b-410d-987d-75b1c2d53154","isHidden":false,"type":"gallery"}]
 
 ----
 
 Uuid: pfhfhnkoldusrx3x
+
+----
+
+Content:
+
+- 
+  content:
+    text: '<p>The Independent Community Radio Network (ICRN) is a non-profit organisation and web radio network founded in 2022. We connect and support radios from across Europe to foster sustainability, cross-regional collaboration, and knowledge-sharing in independent radio and community media.</p><p>While our roots are in the Baltic-Nordic region, our network has expanded internationally, reflecting the growing need for cooperation in our field.  Our activities include network meetings, capacity-building workshops, and the creation of research and resources focused on web radio and the local communities of our members. We actively support underrepresented voices, ensuring our work reflects the diverse social groups our members serve. Through public knowledge-sharing, we aim to break competitiveness in community media and create an environment for cross-influencing. We approach our work creatively, and see this as an essential part of working together.</p><p>We review applications monthly and aim to respond within 30 working days.  Please briefly describe your radio station: your focus, geography and radio community. Tell us why you would like to join ICRN: what are you looking to gain from the collaboration and what could you contribute to our community? In a few words, explain your radio’s legal status and independence. Please indicate which membership level you are applying for: ICRN Member (€120 annually – for radio stations) ICRN Support Member (€60 annually – open to radio stations, organisations, networks, and individuals) Note: Fees can be paid annually or monthly and are used to support the basic operating costs of the network. If you want to join the network but are experiencing financial difficulties, please let us know in your application. We are happy to discuss options.  Thank you for your interest in ICRN!</p>'
+  id: f66917b3-8c3c-4c96-855c-8bbf10d8bd77
+  isHidden: false
+  type: text
+- 
+  content:
+    location: kirby
+    image:
+      - 
+        id: icrn-ida.jpg
+        image:
+          back: black
+          color: orange-500
+          cover: false
+          icon: image
+          url: >
+            http://localhost:8000/media/pages/about/86bf857564-1756805698/icrn-ida.jpg
+          src: >
+            data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw
+          srcset: >
+            http://localhost:8000/media/pages/about/86bf857564-1756805698/icrn-ida-38x.jpg
+            38w,
+            http://localhost:8000/media/pages/about/86bf857564-1756805698/icrn-ida-76x.jpg
+            76w
+        info: ""
+        link: /pages/about/files/icrn-ida.jpg
+        sortable: true
+        text: icrn-ida.jpg
+        uuid: file://vy5v0i7dhwzbdhoc
+        dragText: '(image: file://vy5v0i7dhwzbdhoc)'
+        filename: icrn-ida.jpg
+        type: image
+        url: >
+          http://localhost:8000/media/pages/about/86bf857564-1756805698/icrn-ida.jpg
+    src: ""
+    alt: ""
+    caption: ICRN meetup at IDA Radio, Tallinn
+    link: ""
+    ratio: ""
+    crop: false
+  id: 3fc0a13a-c4ad-43d7-84b0-108b08df282c
+  isHidden: false
+  type: image
+- 
+  content: [ ]
+  id: 0eaeedf2-4155-48dc-8b58-ca260f781d7b
+  isHidden: false
+  type: line
+- 
+  content:
+    level: h2
+    text: Supporters
+  id: 2b92911f-789e-4557-bcf0-dc516a210189
+  isHidden: false
+  type: heading
+- 
+  content:
+    images:
+      - 
+        id: kirby-logo.svg
+        image:
+          back: pattern
+          color: orange-500
+          cover: false
+          icon: image
+          ratio: 1/1
+          url: >
+            http://localhost:8000/media/pages/about/f91a8e4b48-1756805631/kirby-logo.svg
+          src: >
+            http://localhost:8000/media/pages/about/f91a8e4b48-1756805631/kirby-logo.svg
+        info: ""
+        link: /pages/about/files/kirby-logo.svg
+        sortable: true
+        text: kirby-logo.svg
+        uuid: file://sfhqv3lplriwgps8
+        dragText: '(image: file://sfhqv3lplriwgps8)'
+        filename: kirby-logo.svg
+        type: image
+        url: >
+          http://localhost:8000/media/pages/about/f91a8e4b48-1756805631/kirby-logo.svg
+      - 
+        id: display-europe-network-logo.webp
+        image:
+          back: pattern
+          color: orange-500
+          cover: false
+          icon: image
+          ratio: 1/1
+          url: >
+            http://localhost:8000/media/pages/about/5915b91923-1756805631/display-europe-network-logo.webp
+          src: >
+            data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw
+          srcset: >
+            http://localhost:8000/media/pages/about/5915b91923-1756805631/display-europe-network-logo-352x.webp
+            352w,
+            http://localhost:8000/media/pages/about/5915b91923-1756805631/display-europe-network-logo-864x.webp
+            864w,
+            http://localhost:8000/media/pages/about/5915b91923-1756805631/display-europe-network-logo-1408x.webp
+            1408w
+        info: ""
+        link: >
+          /pages/about/files/display-europe-network-logo.webp
+        sortable: true
+        text: display-europe-network-logo.webp
+        uuid: file://7yscglmhe74z9zyg
+        dragText: '(image: file://7yscglmhe74z9zyg)'
+        filename: display-europe-network-logo.webp
+        type: image
+        url: >
+          http://localhost:8000/media/pages/about/5915b91923-1756805631/display-europe-network-logo.webp
+      - 
+        id: nordic-baltic-logo.png
+        image:
+          back: pattern
+          color: orange-500
+          cover: false
+          icon: image
+          ratio: 1/1
+          url: >
+            http://localhost:8000/media/pages/about/ced40657c8-1756805631/nordic-baltic-logo.png
+          src: >
+            data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw
+          srcset: >
+            http://localhost:8000/media/pages/about/ced40657c8-1756805631/nordic-baltic-logo-352x.png
+            352w,
+            http://localhost:8000/media/pages/about/ced40657c8-1756805631/nordic-baltic-logo-864x.png
+            864w,
+            http://localhost:8000/media/pages/about/ced40657c8-1756805631/nordic-baltic-logo-1408x.png
+            1408w
+        info: ""
+        link: >
+          /pages/about/files/nordic-baltic-logo.png
+        sortable: true
+        text: nordic-baltic-logo.png
+        uuid: file://e1c4wxpc6h1ppggo
+        dragText: '(image: file://e1c4wxpc6h1ppggo)'
+        filename: nordic-baltic-logo.png
+        type: image
+        url: >
+          http://localhost:8000/media/pages/about/ced40657c8-1756805631/nordic-baltic-logo.png
+    caption: ""
+    ratio: ""
+    crop: false
+  id: a65943d6-992b-410d-987d-75b1c2d53154
+  isHidden: false
+  type: gallery
