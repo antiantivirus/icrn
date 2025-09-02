@@ -1,7 +1,7 @@
 <?php snippet('header') ?>
 
-<div class="pt-40 md:pt-80 px-4 lg:px-10">
-  <article class="max-w-prose mx-auto prose space-y-5 lg:space-y-10 prose">
+<div class="pt-40 md:pt-80 px-4 lg:px-10 max-w-screen">
+  <article class="max-w-prose mx-auto prose space-y-5 lg:space-y-10 prose ">
     <h1 class="blob before:bg-blue">
       <?= $page->title() ?>
     </h1>
