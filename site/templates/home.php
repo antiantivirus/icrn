@@ -17,12 +17,30 @@
   </div>
 </section>
 
-<section class="py-60 -mt-60"
-  style="background: linear-gradient(180deg, rgba(54, 178, 80, 0) 0%, #36B250 50.48%, rgba(54, 178, 80, 0) 100%);">
-  <marquee>Our new website is currently under construction ~ Our new website is currently under construction ꩜ Our new website is currently under construction 🚧 Our new website is currently under construction ~ </marquee>
-</section>
+<!-- <section class="px-4 py-20 lg:px-10 mx-auto">
+  <h3 class="blob before:bg-green h1 mb-12">
+    Latest
+  </h3>
+  <div class="grid grid-cols-3 gap-x-10 gap-y-4">
+    <div>
+      <div class="aspect-video bg-green mb-1"></div>
+      <h4 class="mb-1">Alternating Current Festival, May 1 – 4</h4>
+      <p>We’re happy to announce that Alternating Current, organised by Dublin Digital Radio, kicks off this weekend!</p>
+    </div>
+    <div>
+      <div class="aspect-video bg-orange mb-1"></div>
+      <h4 class="mb-1">ICRN x Signals2Noise</h4>
+      <p>We’re happy to announce that Alternating Current, organised by Dublin Digital Radio, kicks off this weekend!</p>
+    </div>
+    <div>
+      <div class="aspect-video bg-dark-blue mb-1"></div>
+      <h4 class="mb-1">ICRN x Tīrkultūra Radio Pop-Up at Le Guess Who? Festival</h4>
+      <p>We’re happy to announce that Alternating Current, organised by Dublin Digital Radio, kicks off this weekend!</p>
+    </div>
+  </div>
+</section> -->
 
-<section class="px-4 py-20 lg:px-10 max-w-6xl mx-auto">
+<section class="px-4 py-20 lg:px-10 mx-auto">
   <h3 class="blob before:bg-green h1 mb-12">
     Members
   </h3>
@@ -30,7 +48,9 @@
     <?php foreach ($stations as $member): ?>
       <div class="flex items-center gap-1">
         <div class="w-5 h-5 rounded-full mt-0.25" style="background: <?= $member->colour() ?>"></div>
-        <?= $member->title() ?>
+        <a href="<?= $member->url() ?>">
+          <h4><?= $member->title() ?></h4>
+        </a>
       </div>
     <?php endforeach; ?>
   </div>

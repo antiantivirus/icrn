@@ -2,11 +2,38 @@ Title: Alternating Current Festival, May 1 – 4
 
 ----
 
+Description: We’re happy to announce that Alternating Current, organised by Dublin Digital Radio, kicks off this weekend!
+
+----
+
+Content: 
+
+----
+
+Media: 
+
+----
+
 Cover: - file://4h5ixusxdxza8vkv
 
 ----
 
-Description: We’re happy to announce that Alternating Current, organised by Dublin Digital Radio, kicks off this weekend!
+Authors: 
+
+----
+
+Tags: Festival, Dublin, Sound
+
+----
+
+Stations:
+
+- page://m5itpgxmcpx1wm5s
+- page://fvhqnekdbkgm2jid
+
+----
+
+Related-resources: 
 
 ----
 
@@ -25,18 +52,6 @@ Across all formats, Alternating Current fosters collaboration, DIY approaches, a
 ----
 
 Audio: 
-
-----
-
-Authors: 
-
-----
-
-Tags: 
-
-----
-
-Stations: - page://m5itpgxmcpx1wm5s
 
 ----
 
