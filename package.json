@@ -7,12 +7,14 @@
   "scripts": {
     "dev": "concurrently \"composer start\" \"vite\" --kill-others",
     "build": "vite build",
-    "deploy:live:sim": "./deploy live",
-    "deploy:live": "./deploy live go",
-    "deploy:staging:sim": "./deploy staging",
+    "deploy:staging:preview": "./deploy preview-staging",
     "deploy:staging": "./deploy staging go",
-    "content:sync:sim": "./deploy sync",
-    "content:sync": "./deploy sync go"
+    "deploy:production:preview": "./deploy preview-production",
+    "deploy:production": "./deploy production go",
+    "content:sync:staging:preview": "./deploy sync-staging",
+    "content:sync:staging": "./deploy sync-staging go",
+    "content:sync:production:preview": "./deploy sync-production",
+    "content:sync:production": "./deploy sync-production go"
   },
   "repository": {
     "type": "git",

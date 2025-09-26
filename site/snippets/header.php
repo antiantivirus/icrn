@@ -7,14 +7,14 @@
   <title><?= $site->title()->esc() ?> | <?= $page->title()->esc() ?></title>
 
   <meta name="robots" content="index,follow">
-  <meta name="description" content="">
+  <meta name="description" content="Independent Community Radio Network. We connect and support radios from across Europe to foster sustainability, cross-regional collaboration, and knowledge-sharing in independent radio and community media.">
   <meta name="thumbnail" content="">
   <meta property="og:site_name" name="og:site_name" content="">
   <meta property="og:type" content="website">
   <meta property="og:url" content="<?php echo $page->url(); ?>">
   <meta property="og:title" content="<?= $site->title()->esc() ?> | <?= $page->title()->esc() ?>">
   <meta property="og:description" content="">
-  <meta property="og:image" content="">
+  <meta property="og:image" content="<?= url('/assets/images/icrn-og.jpg') ?>">
 
   <link rel="shortcut icon" type="image/x-icon" href="<?= url('/assets/favicon.png') ?>">
 

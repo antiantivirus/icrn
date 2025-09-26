@@ -1,52 +1,23 @@
 
 #!/bin/bash
 
-# Kirby CMS Deployment Script
-# This script uses rsync to deploy files to staging or production servers.
-# It supports dry runs and actual deployments, as well as syncing content directories.
-# Usage:
-# ./deploy.sh staging [go]   # Dry run or deploy to staging
-# ./deploy.sh production [go] # Dry run or deploy to production
-# ./deploy.sh sync-staging [go] # Dry run or sync content to staging
-# ./deploy.sh sync-production [go] # Dry run or sync content to production
 
-# CONFIGURATION
+# Kirby CMS FTP Deployment Script (lftp version)
+
 LOCAL_DIR="$(pwd)/"
 
-# Staging
-STAGING_USER=""
-STAGING_HOST=""
-STAGING_PATH=""
+# Use existing credentials for FTP
+FTP_HOST="45.84.207.187"
+FTP_USER="u430633202"
+FTP_PASS='Wm7&S47!GQ0Zf!e!hQ2&' # <-- Set your FTP password here
 
-# Production
-PROD_USER=""
-PROD_HOST=""
-PROD_PATH=""
+# Staging and Production remote paths
+STAGING_PATH="/domains/staging.icrn.live/public_html"
+PROD_PATH="/domains/icrn.live/public_html"
 
-# Exclude patterns for full deploy
-EXCLUDES=(
-  ".git/"
-  ".gitignore"
-  "node_modules/"
-  "src"
-  ".env"
-  ".dev"
-  "deploy.sh"
-  "composer.lock"
-  "package.json"
-  "package-lock.json"
-  "yarn.lock"
-  "site/sessions"
-  "site/cache/"
-  "site/accounts"
-  "content"
-  "media"
-)
+# Exclude patterns (space-separated, glob style)
+EXCLUDES="--exclude-glob .git* --exclude-glob node_modules --exclude-glob src --exclude-glob .env --exclude-glob .dev --exclude-glob deploy.sh --exclude-glob composer.lock --exclude-glob package.json --exclude-glob package-lock.json --exclude-glob yarn.lock --exclude-glob site/sessions --exclude-glob site/cache --exclude-glob site/accounts --exclude-glob media"
 
-
-# ---------------------------------------------
-# MAIN
-# ---------------------------------------------
 ERRORSTRING="Whoops! That didn't work. Please check the command you ran."
 
 if [ $# -eq 0 ]; then
@@ -54,56 +25,66 @@ if [ $# -eq 0 ]; then
   exit 1
 fi
 
-# Build rsync exclude flags from EXCLUDES array
-RSYNC_EXCLUDES=""
-for EXCLUDE in "${EXCLUDES[@]}"; do
-  RSYNC_EXCLUDES+="--exclude=$EXCLUDE "
-done
+deploy() {
+  REMOTE_PATH=$1
+  DRYRUN=$2
+  if [ "$DRYRUN" = "dry" ]; then
+    echo "[DRY RUN] Would upload to $REMOTE_PATH"
+    lftp -u "$FTP_USER","$FTP_PASS" $FTP_HOST -e "set ssl:verify-certificate no; mirror --reverse --dry-run --delete $EXCLUDES $LOCAL_DIR $REMOTE_PATH; quit"
+  else
+    echo "Uploading to $REMOTE_PATH"
+    lftp -u "$FTP_USER","$FTP_PASS" $FTP_HOST -e "set ssl:verify-certificate no; mirror --reverse --delete $EXCLUDES $LOCAL_DIR $REMOTE_PATH; quit"
+  fi
+}
+
+sync_content() {
+  REMOTE_PATH=$1/content
+  DRYRUN=$2
+  if [ "$DRYRUN" = "dry" ]; then
+    echo "[DRY RUN] Would sync content to $REMOTE_PATH"
+    lftp -u "$FTP_USER","$FTP_PASS" $FTP_HOST -e "mirror --reverse --dry-run --delete content $REMOTE_PATH; quit"
+  else
+    echo "Syncing content to $REMOTE_PATH"
+    lftp -u "$FTP_USER","$FTP_PASS" $FTP_HOST -e "mirror --reverse --delete content $REMOTE_PATH; quit"
+  fi
+}
 
 case "$1" in
   staging)
-    if [[ -z $2 ]]; then
-      echo "[DRY RUN] Deploying to STAGING ($STAGING_HOST:$STAGING_PATH)"
-      rsync -avz --delete $RSYNC_EXCLUDES --dry-run "$LOCAL_DIR" "$STAGING_USER@$STAGING_HOST:$STAGING_PATH"
-    elif [[ "$2" == "go" ]]; then
-      echo "Deploying to STAGING ($STAGING_HOST:$STAGING_PATH)"
-      rsync -avz --delete $RSYNC_EXCLUDES "$LOCAL_DIR" "$STAGING_USER@$STAGING_HOST:$STAGING_PATH"
+    if [[ "$2" == "go" ]]; then
+      deploy "$STAGING_PATH" "live"
     else
-      echo "$ERRORSTRING"
+      deploy "$STAGING_PATH" "dry"
     fi
     ;;
   production)
-    if [[ -z $2 ]]; then
-      echo "[DRY RUN] Deploying to PRODUCTION ($PROD_HOST:$PROD_PATH)"
-      rsync -avz --delete $RSYNC_EXCLUDES --dry-run "$LOCAL_DIR" "$PROD_USER@$PROD_HOST:$PROD_PATH"
-    elif [[ "$2" == "go" ]]; then
-      echo " Deploying to PRODUCTION ($PROD_HOST:$PROD_PATH)"
-      rsync -avz --delete $RSYNC_EXCLUDES "$LOCAL_DIR" "$PROD_USER@$PROD_HOST:$PROD_PATH"
+    if [[ "$2" == "go" ]]; then
+      deploy "$PROD_PATH" "live"
     else
-      echo "$ERRORSTRING"
+      deploy "$PROD_PATH" "dry"
     fi
     ;;
   sync-staging)
-    if [[ -z $2 ]]; then
-      echo "[DRY RUN] Syncing content to STAGING ($STAGING_HOST:$STAGING_PATH/content)"
-      rsync -avz --delete --dry-run "${LOCAL_DIR}content/" "$STAGING_USER@$STAGING_HOST:$STAGING_PATH/content/"
-    elif [[ "$2" == "go" ]]; then
-      echo "Syncing content to STAGING ($STAGING_HOST:$STAGING_PATH/content)"
-      rsync -avz --delete "${LOCAL_DIR}content/" "$STAGING_USER@$STAGING_HOST:$STAGING_PATH/content/"
+    if [[ "$2" == "go" ]]; then
+      sync_content "$STAGING_PATH" "live"
     else
-      echo "$ERRORSTRING"
+      sync_content "$STAGING_PATH" "dry"
     fi
     ;;
   sync-production)
-    if [[ -z $2 ]]; then
-      echo "[DRY RUN] Syncing content to PRODUCTION ($PROD_HOST:$PROD_PATH/content)"
-      rsync -avz --delete --dry-run "${LOCAL_DIR}content/" "$PROD_USER@$PROD_HOST:$PROD_PATH/content/"
-    elif [[ "$2" == "go" ]]; then
-      echo "Syncing content to PRODUCTION ($PROD_HOST:$PROD_PATH/content)"
-      rsync -avz --delete "${LOCAL_DIR}content/" "$PROD_USER@$PROD_HOST:$PROD_PATH/content/"
+    if [[ "$2" == "go" ]]; then
+      sync_content "$PROD_PATH" "live"
     else
-      echo "$ERRORSTRING"
+      sync_content "$PROD_PATH" "dry"
     fi
+    ;;
+  preview-staging)
+    echo "[PREVIEW] Files that would change on STAGING ($STAGING_PATH):"
+    lftp -u "$FTP_USER","$FTP_PASS" $FTP_HOST -e "mirror --reverse --dry-run --delete $EXCLUDES $LOCAL_DIR $STAGING_PATH; quit" | grep -E 'Uploading|Deleting|Transferring|Creating directory'
+    ;;
+  preview-production)
+    echo "[PREVIEW] Files that would change on PRODUCTION ($PROD_PATH):"
+    lftp -u "$FTP_USER","$FTP_PASS" $FTP_HOST -e "mirror --reverse --dry-run --delete $EXCLUDES $LOCAL_DIR $PROD_PATH; quit" | grep -E 'Uploading|Deleting|Transferring|Creating directory'
     ;;
   *)
     echo "$ERRORSTRING"
