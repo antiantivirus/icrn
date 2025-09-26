@@ -18,29 +18,7 @@ PROD_PATH="/domains/icrn.live/public_html"
 # Exclude patterns (space-separated, glob style)
 
 # Exclude patterns for lftp mirror (multi-line for readability)
-EXCLUDES="
-  --exclude-glob .git
-  --exclude-glob .git/
-  --exclude-glob .git*
-  --exclude-glob node_modules
-  --exclude-glob node_modules/
-  --exclude-glob src
-  --exclude-glob src/
-  --exclude-glob .env
-  --exclude-glob .dev
-  --exclude-glob deploy.sh
-  --exclude-glob composer.lock
-  --exclude-glob package.json
-  --exclude-glob package-lock.json
-  --exclude-glob yarn.lock
-  --exclude-glob site/sessions
-  --exclude-glob site/sessions/
-  --exclude-glob site/cache
-  --exclude-glob site/cache/
-  --exclude-glob site/accounts
-  --exclude-glob site/accounts/
-  --exclude-glob media
-  --exclude-glob media/"
+EXCLUDES="--exclude-glob .git --exclude-glob .git/ --exclude-glob .git* --exclude-glob node_modules --exclude-glob node_modules/ --exclude-glob src --exclude-glob src/ --exclude-glob .env --exclude-glob .dev --exclude-glob deploy.sh --exclude-glob composer.lock --exclude-glob package.json --exclude-glob package-lock.json --exclude-glob yarn.lock --exclude-glob site/sessions --exclude-glob site/sessions/ --exclude-glob site/cache --exclude-glob site/cache/ --exclude-glob site/accounts --exclude-glob site/accounts/ --exclude-glob media--exclude-glob media/"
 
 ERRORSTRING="Whoops! That didn't work. Please check the command you ran."
 
@@ -54,10 +32,10 @@ deploy() {
   DRYRUN=$2
   if [ "$DRYRUN" = "dry" ]; then
     echo "[DRY RUN] Would upload to $REMOTE_PATH"
-    lftp -u "$FTP_USER","$FTP_PASS" $FTP_HOST -e "set ssl:verify-certificate no; mirror --parallel=20 --reverse --dry-run --delete $EXCLUDES $LOCAL_DIR $REMOTE_PATH; quit"
+    lftp -u "$FTP_USER","$FTP_PASS" $FTP_HOST -e "set ssl:verify-certificate no; mirror --parallel=8 --reverse --verbose -n --delete $EXCLUDES $LOCAL_DIR $REMOTE_PATH; quit"
   else
     echo "Uploading to $REMOTE_PATH"
-    lftp -u "$FTP_USER","$FTP_PASS" $FTP_HOST -e "set ssl:verify-certificate no; mirror --parallel=20 --reverse --delete $EXCLUDES $LOCAL_DIR $REMOTE_PATH; quit"
+    lftp -u "$FTP_USER","$FTP_PASS" $FTP_HOST -e "set ssl:verify-certificate no; mirror --parallel=8 --reverse --verbose --delete $EXCLUDES $LOCAL_DIR $REMOTE_PATH; quit"
   fi
 }
 
