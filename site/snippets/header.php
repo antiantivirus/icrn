@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title><?= $site->title()->esc() ?> | <?= $page->title()->esc() ?></title>
+  <title><?= $page->title()->esc() ?> | <?= $site->title()->esc() ?></title>
 
   <meta name="robots" content="index,follow">
   <meta name="description" content="Independent Community Radio Network. We connect and support radios from across Europe to foster sustainability, cross-regional collaboration, and knowledge-sharing in independent radio and community media.">
@@ -12,7 +12,7 @@
   <meta property="og:site_name" name="og:site_name" content="">
   <meta property="og:type" content="website">
   <meta property="og:url" content="<?php echo $page->url(); ?>">
-  <meta property="og:title" content="<?= $site->title()->esc() ?> | <?= $page->title()->esc() ?>">
+  <meta property="og:title" content="<?= $page->title()->esc() ?> | <?= $site->title()->esc() ?>">
   <meta property="og:description" content="">
   <meta property="og:image" content="<?= url('/assets/images/icrn-og.jpg') ?>">
 
