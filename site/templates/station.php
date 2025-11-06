@@ -14,7 +14,7 @@
     <?php endforeach ?>
   <?php endif ?>
 </marquee>
-<div class="grid lg:grid-cols-2 gap-10 lg:gap-20 pt-10 lg:pt-10 px-4 lg:px-10">
+<div class="grid md:grid-cols-2 gap-10 lg:gap-20 pt-10 lg:pt-10 px-4 lg:px-10">
   <div>
     <div class="mb-8">
       <h1 class="blob" id="title">

@@ -15,8 +15,12 @@
           }
         </style>
         <a href="<?= $station->url() ?>" class="flex flex-col gap-4">
-          <?php if ($station->logo()->isNotEmpty()): ?>
-            <img src="<?= $station->logo()->toFile()->resize(500, null)->url() ?>" alt="<?= $station->title() ?> logo" class="w-full h-auto grayscale">
+          <?php
+          // Use logo if available, otherwise use first image
+          $image = $station->logo()->toFile() ?: $station->images()->first();
+          if ($image):
+          ?>
+            <img src="<?= $image->resize(600, 600)->url() ?>" alt="<?= $station->title() ?> logo" class="w-full aspect-square object-contain grayscale">
           <?php endif ?>
           <h2 class="blob-small blob-<?= $station->slug() ?>"><?= $station->title() ?></h2>
         </a>
