@@ -1,0 +1,48 @@
+Title: DIY Low-Power FM Transmission Guide
+
+----
+
+Description: Technical manual for building and operating low-power FM transmitters for temporary broadcasts, art projects, and community events.
+
+----
+
+Content:
+
+A practical guide covering the technical, legal, and creative aspects of temporary low-power broadcasting. Includes detailed instructions for building FM transmitters from readily available components, antenna design, power supply considerations, and frequency selection. Addresses legal frameworks for temporary broadcasting in different countries and provides safety guidelines. Features case studies of temporary broadcast projects including festival radio, protest broadcasts, and site-specific installations.
+
+----
+
+Media:
+
+-
+  title: Download Technical Manual
+  url: https://archive.org/details/diy-fm-transmission-guide
+  caption: PDF guide with circuit diagrams and component lists
+
+----
+
+Cover:
+
+----
+
+Authors: Thomas Becker, Radio Activists Collective
+
+----
+
+Tags: Technical, DIY
+
+----
+
+Stations:
+
+----
+
+Related-resources:
+
+----
+
+Date: 2024-08-12
+
+----
+
+Uuid: res00006diytransmission

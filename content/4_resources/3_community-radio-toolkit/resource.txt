@@ -1,0 +1,45 @@
+Title: Community Radio Toolkit 2025
+
+----
+
+Description: A comprehensive guide for starting and running a community radio station, including technical setup, licensing, programming, and community engagement strategies.
+
+----
+
+Content: This 120-page toolkit provides everything needed to launch a community radio station. It covers legal requirements across different European countries, affordable equipment recommendations, studio design, volunteer management, funding strategies, and best practices for community engagement. Includes case studies from successful stations and templates for governance documents.
+
+----
+
+Media: 
+
+----
+
+Cover:
+
+----
+
+Color: #01b4ff
+
+----
+
+Authors: ICRN Collective
+
+----
+
+Tags: guide, technical
+
+----
+
+Stations: 
+
+----
+
+Related-resources: 
+
+----
+
+Date: 2025-01-10
+
+----
+
+Uuid: res00003communitytoolkit

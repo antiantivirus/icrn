@@ -1,0 +1,48 @@
+Title: Radio Waves Magazine Issue 12
+
+----
+
+Description: Latest issue of Radio Waves, the quarterly magazine covering independent radio culture, technology, and community media practices across Europe.
+
+----
+
+Content:
+
+This issue features in-depth articles on the resurgence of shortwave radio, profiles of emerging community stations in Eastern Europe, a technical deep-dive into digital audio workflows, and reflections on 50 years of community radio in Italy. Regular sections include equipment reviews, programming ideas, legal updates, and a directory of new stations. This issue includes a special supplement on radio and climate activism, documenting how community radio stations are addressing environmental issues.
+
+----
+
+Media:
+
+-
+  title: Read Digital Issue
+  url: https://archive.org/details/radio-waves-issue-12
+  caption: Full magazine in PDF format
+
+----
+
+Cover:
+
+----
+
+Authors: Radio Waves Editorial Collective
+
+----
+
+Tags: Magazine
+
+----
+
+Stations:
+
+----
+
+Related-resources:
+
+----
+
+Date: 2025-02-01
+
+----
+
+Uuid: res00008radiowavesmag

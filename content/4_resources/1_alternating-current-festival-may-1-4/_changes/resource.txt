@@ -10,7 +10,11 @@ Content:
 
 ----
 
-Media: 
+Media:
+
+- 
+  title: ""
+  caption: ""
 
 ----
 
@@ -18,15 +22,11 @@ Cover: - file://4h5ixusxdxza8vkv
 
 ----
 
-Color: #f8661b
+Authors: 
 
 ----
 
-Authors:
-
-----
-
-Tags: festival, sound
+Tags: Festival, Dublin, Sound
 
 ----
 
@@ -64,3 +64,7 @@ Tag:
 ----
 
 Uuid: frzkvygs1gifbjha
+
+----
+
+Lock: JNm5g5Oj
