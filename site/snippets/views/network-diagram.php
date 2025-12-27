@@ -204,6 +204,9 @@ Autoplay
       const selectedStation = station || this.getRandomStation(this.lastSelectedStation);
       this.lastSelectedStation = selectedStation;
 
+      // Store station URL on node for click handler
+      node.dataset.stationUrl = selectedStation.url;
+
       this.image.src = selectedStation.image;
       this.text.innerHTML = selectedStation.title;
 
@@ -243,6 +246,25 @@ Autoplay
         node.addEventListener('mouseout', () => {
           this.isHovering = false;
           this.deactivateNode();
+        });
+
+        node.addEventListener('click', (e) => {
+          const stationUrl = node.dataset.stationUrl;
+          if (stationUrl) {
+            // Use htmx to navigate to station page
+            if (typeof htmx !== 'undefined') {
+              htmx.ajax('GET', stationUrl, {
+                target: '#main',
+                select: '#main',
+                swap: 'outerHTML'
+              });
+              // Update browser URL
+              window.history.pushState({}, '', stationUrl);
+            } else {
+              // Fallback to regular navigation
+              window.location.href = stationUrl;
+            }
+          }
         });
       });
     }
