@@ -6,4 +6,17 @@ Text: <iframe height="300" src="https://dashboard.mailerlite.com/forms/90645/123
 
 ----
 
+Editions:
+
+- 
+  title: ""
+  date: 2025-11-01
+  link: >
+    https://preview.mailerlite.io/preview/90645/emails/172593722124403925
+  0: ""
+  1: ""
+  2: ""
+
+----
+
 Uuid: xgdrvfoqvcahohkw

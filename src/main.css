@@ -118,14 +118,6 @@
     background-color: var(--color-orange);
   }
 
-  body[data-page="members"] {
-    background-color: var(--color-blue);
-  }
-
-  body[data-page="resources"] {
-    background-color: var(--color-blue);
-  }
-
   body[data-page="activity"] {
     background-color: var(--color-green);
   }
@@ -140,11 +132,16 @@
     @apply w-4 h-4 lg:w-5 lg:h-5 rounded-full inline-block lg:align-[-10%] align-[-8%] mr-2;
   }
 
-  .link {
-    @apply underline;
+  .tag {
+    @apply inline-block px-1.5 py-0.5 font-family-mono border border-black bg-white transition-colors text-base lowercase;
   }
 
-  .link::after {
-    content: "↗";
+  .tag:hover,
+  .tag.active {
+    @apply bg-bright-green;
+  }
+
+  .meta-label {
+    @apply font-family-mono text-base;
   }
 }

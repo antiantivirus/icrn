@@ -1,0 +1,48 @@
+Title: Sound Activism Workshop Series
+
+----
+
+Description: Recordings and materials from a five-day workshop exploring sound, radio, and sonic practices as tools for social and political activism.
+
+----
+
+Content:
+
+This workshop brought together 30 participants from across Europe to explore sound and radio as activist practices. Sessions covered community listening practices, soundwalking as urban research, radio as protest medium, audio documentation strategies, and collaborative sound-making. The workshop culminated in a 24-hour temporary radio broadcast featuring participants' work. This resource includes audio recordings of all sessions, participant interviews, workshop exercises, and a handbook for facilitating similar workshops.
+
+----
+
+Media:
+
+-
+  title: Workshop Archive
+  url: https://archive.org/details/sound-activism-workshop-2024
+  caption: Audio recordings, handbook, and workshop materials
+
+----
+
+Cover:
+
+----
+
+Authors: Facilitated by Sound & Action Collective
+
+----
+
+Tags: Workshop, Activism
+
+----
+
+Stations:
+
+----
+
+Related-resources:
+
+----
+
+Date: 2024-10-22
+
+----
+
+Uuid: res00007soundactivism

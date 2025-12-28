@@ -14,10 +14,6 @@ Location: Berlin, Germany
 
 ----
 
-Colour: #a346ff
-
-----
-
 Description:
 
 Refuge Worldwide is a radio station, educational platform and event series, operating across two locations in Berlin Neukölln.
@@ -32,7 +28,7 @@ In May 2024, we opened a second space at Niemetzstrasse, complete with a fully-e
 
 ----
 
-Pics: - file://vsovkdszzpqn0duy
+Images: 
 
 ----
 

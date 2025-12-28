@@ -17,8 +17,12 @@ columns:
         headline: Published
         type: pages
         status: listed
-        layout: cards
+        layout: table
         template: resource
+        columns:
+          title: true
+          authors: true
+          date: true
   - width: 1/3
     sections:
       drafts:

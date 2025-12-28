@@ -1,0 +1,48 @@
+Title: Experimental Broadcast Archive Series
+
+----
+
+Description: Archive of experimental radio broadcasts from the 1980s-90s, featuring boundary-pushing audio art, sound collage, and avant-garde programming.
+
+----
+
+Content:
+
+This collection preserves rare recordings from experimental radio programs that pushed the boundaries of broadcasting. Featuring works by sound artists, composers, and radio experimentalists who used radio as a creative medium. Programs include multi-hour sound compositions, live improvisations, field recording expeditions, and conceptual broadcast pieces. The archive includes shows from stations including Radio Tsonami (Chile), Resonance FM (UK), Kunstradio (Austria), and various temporary broadcast projects. Each program is accompanied by contextual notes and artist biographies.
+
+----
+
+Media:
+
+-
+  title: Listen to Archive
+  url: https://archive.org/details/experimental-broadcast-series
+  caption: Over 200 hours of digitized experimental broadcasts
+
+----
+
+Cover:
+
+----
+
+Authors: Curated by Archives of Experimental Sound
+
+----
+
+Tags: Archive, Experimental
+
+----
+
+Stations:
+
+----
+
+Related-resources:
+
+----
+
+Date: 2024-07-18
+
+----
+
+Uuid: res00009experimentalbroadcast

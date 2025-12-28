@@ -7,6 +7,8 @@ document.addEventListener('DOMContentLoaded', function () {
       body.setAttribute('data-page', 'about');
     } else if (currentPath.includes('/newsletter')) {
       body.setAttribute('data-page', 'newsletter');
+    } else if (currentPath.includes('/activity')) {
+      body.setAttribute('data-page', 'activity');
     } else {
       body.setAttribute('data-page', 'default');
     }

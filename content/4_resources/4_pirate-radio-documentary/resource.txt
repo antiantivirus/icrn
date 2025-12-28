@@ -1,0 +1,41 @@
+Title: Waves of Resistance: Pirate Radio Documentary
+
+----
+
+Description: Feature-length documentary exploring the legacy of pirate radio stations in Northern Europe and their influence on contemporary independent broadcasting.
+
+----
+
+Content: This 90-minute documentary tells the story of underground radio stations that operated outside official broadcasting regulations from the 1970s through the 1990s. Through interviews with former pirate radio operators, archival footage, and recreated broadcasts, the film explores how these illegal stations challenged media monopolies, provided platforms for marginalized voices, and influenced mainstream radio culture. Filmed in Amsterdam, London, Berlin, and Copenhagen.
+
+----
+
+Media: https://archive.org/details/a-visit-to-best-friends
+
+----
+
+Cover: 
+
+----
+
+Authors: Jan Petersen, Sofia Nielsen
+
+----
+
+Tags: Documentary
+
+----
+
+Stations: 
+
+----
+
+Related-resources: 
+
+----
+
+Date: 2024-09-20
+
+----
+
+Uuid: res00004pirateradiodoc

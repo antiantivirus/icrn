@@ -10,7 +10,15 @@ columns:
         fields:
           text:
             type: textarea
-            size: huge
+          editions:
+            type: structure
+            fields:
+              date:
+                type: date
+                display: MMM 'YY
+              link:
+                type: url
+
   sidebar:
     width: 1/3
     sections:

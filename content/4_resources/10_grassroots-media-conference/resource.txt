@@ -1,0 +1,48 @@
+Title: Grassroots Media Conference 2024: Proceedings
+
+----
+
+Description: Complete proceedings from the annual Grassroots Media Conference, including keynote speeches, panel discussions, and workshop documentation.
+
+----
+
+Content:
+
+The 2024 Grassroots Media Conference brought together over 200 community media practitioners, activists, and researchers from 30 countries. This comprehensive proceedings document includes transcripts and recordings of all keynote presentations, panel discussions on topics including community media policy, digital rights, sustainable funding models, and cross-border collaboration. Also includes summaries from 20+ workshops covering practical skills like podcast production, studio design, social media strategies, and community engagement. Features a directory of all participating organizations and collaborative projects initiated at the conference.
+
+----
+
+Media:
+
+-
+  title: Conference Archive
+  url: https://archive.org/details/grassroots-media-conf-2024
+  caption: Video recordings, transcripts, and workshop materials
+
+----
+
+Cover:
+
+----
+
+Authors: Grassroots Media Network
+
+----
+
+Tags: Conference, Workshop
+
+----
+
+Stations:
+
+----
+
+Related-resources:
+
+----
+
+Date: 2024-11-28
+
+----
+
+Uuid: res00010grassrootsconf
