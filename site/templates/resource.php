@@ -3,8 +3,8 @@
 <article class="pt-40 lg:pt-80 px-4 lg:px-10 pb-20">
   <div class="max-w-screen-xl mx-auto">
 
-    <div class="grid lg:grid-cols-[800px_280px] gap-10 lg:gap-16 justify-center">
-      <article class="space-y-10 lg:space-y-16">
+    <div class="grid lg:grid-cols-6 gap-10 lg:gap-16 justify-center">
+      <article class="space-y-10 lg:col-span-4 lg:space-y-16">
         <h1 class="blob">
           <?= $page->title() ?>
         </h1>
@@ -50,7 +50,7 @@
 
       </article>
 
-      <aside class="space-y-2 lg:space-y-4 lg:sticky lg:top-24 mt-24 lg:self-start">
+      <aside class="space-y-2 lg:col-span-2 lg:space-y-4 lg:sticky lg:top-24 lg:mt-24 lg:self-start">
         <?php if ($page->tags()->isNotEmpty()): ?>
           <div>
             <span class="meta-label">Tags</span>
@@ -92,47 +92,52 @@
             View on Internet Archive ↗
           </a>
         <?php endif; ?>
+        <?php
+        $relatedStations = $page->stations()->toPages();
+        if ($relatedStations->isNotEmpty()):
+        ?>
+          <span class="meta-label">Stations</span>
+          <div class="space-y-1">
+            <?php foreach ($relatedStations as $station): ?>
+              <a
+                href="<?= $station->url() ?>"
+                class="block hover:underline">
+                <div class="flex items-start gap-2">
+                  <?php if ($station->colour()->isNotEmpty()): ?>
+                    <div class="w-4 h-4 rounded-full mt-1 flex-shrink-0" style="background: <?= $station->colour() ?>"></div>
+                  <?php else: ?>
+                    <div class="w-4 h-4 rounded-full mt-1 flex-shrink-0 bg-black opacity-20"></div>
+                  <?php endif; ?>
+                  <?= $station->title() ?>
+                </div>
+              </a>
+            <?php endforeach; ?>
+          </div>
+        <?php endif; ?>
+        <?php
+        $relatedResources = $page->related_resources()->toPages();
+        if ($relatedResources->isNotEmpty()):
+        ?>
+          <span class="meta-label">Related Resources</span>
+          <div class="space-y-1">
+            <?php foreach ($relatedResources as $resource): ?>
+              <a
+                href="<?= $resource->url() ?>"
+                class="block hover:underline">
+                <div class="flex items-start gap-2">
+                  <?php if ($resource->color()->isNotEmpty()): ?>
+                    <div class="w-4 h-4 rounded-full mt-1 flex-shrink-0" style="background: <?= $resource->color() ?>"></div>
+                  <?php else: ?>
+                    <div class="w-4 h-4 rounded-full mt-1 flex-shrink-0 bg-black opacity-20"></div>
+                  <?php endif; ?>
+                  <?= $resource->title() ?>
+                </div>
+              </a>
+            <?php endforeach; ?>
+          </div>
+        <?php endif; ?>
+      </aside>
     </div>
-    <?php
-    $relatedStations = $page->stations()->toPages();
-    if ($relatedStations->isNotEmpty()):
-    ?>
-      <span class="meta-label">Stations</span>
-      <div class="space-y-1">
-        <?php foreach ($relatedStations as $station): ?>
-          <a
-            href="<?= $station->url() ?>"
-            class="block hover:underline">
-            <div class="flex items-start gap-2">
-              <?php if ($station->colour()->isNotEmpty()): ?>
-                <div class="w-4 h-4 rounded-full mt-1 flex-shrink-0" style="background: <?= $station->colour() ?>"></div>
-              <?php endif; ?>
-              <?= $station->title() ?>
-            </div>
-          </a>
-        <?php endforeach; ?>
-      </div>
-    <?php endif; ?>
-    <?php
-    $relatedResources = $page->related_resources()->toPages();
-    if ($relatedResources->isNotEmpty()):
-    ?>
-      <h2 class="mb-6">Related Resources</h2>
-      <div class="grid gap-4">
-        <?php foreach ($relatedResources as $resource): ?>
-          <a
-            href="<?= $resource->url() ?>"
-            class="block p-4 border-2 border-black hover:bg-gray-100 transition-colors">
-            <h3 class="mb-2"><?= $resource->title() ?></h3>
-            <?php if ($resource->description()->isNotEmpty()): ?>
-              <p class=""><?= $resource->description()->excerpt(120) ?></p>
-            <?php endif; ?>
-          </a>
-        <?php endforeach; ?>
-      </div>
-    <?php endif; ?>
-    </aside>
-  </div>
 
   </div>
 </article>
