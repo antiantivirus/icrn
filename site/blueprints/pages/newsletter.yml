@@ -11,6 +11,7 @@ columns:
           text:
             type: textarea
           editions:
+            label: Past Editions
             type: structure
             fields:
               date:
