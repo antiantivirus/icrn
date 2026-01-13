@@ -16,7 +16,7 @@ columns:
             fields:
               date:
                 type: date
-                display: MMM 'YY
+                display: MMM YYYY
               link:
                 type: url
 
