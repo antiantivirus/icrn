@@ -37,16 +37,20 @@
           </div>
         <?php endif; ?>
 
-        <?php if ($page->text()->isNotEmpty()): ?>
-          <div class="prose space-y-6">
-            <?= $page->text()->kt() ?>
-          </div>
-        <?php elseif ($page->content()->isNotEmpty()): ?>
-          <div class="prose space-y-6">
-            <?= $page->content()->kt() ?>
+        <?php
+        $contentBlocks = $page->content()->content()->toBlocks();
+        if ($contentBlocks->isNotEmpty()):
+        ?>
+          <div class="space-y-10">
+            <?php foreach ($contentBlocks as $block): ?>
+              <div id="<?= $block->id() ?>" class="block block-type-<?= $block->type() ?>">
+                <?php snippet('blocks/' . $block->type(), [
+                  'block' => $block,
+                ]) ?>
+              </div>
+            <?php endforeach ?>
           </div>
         <?php endif; ?>
-
 
       </article>
 

@@ -2,26 +2,19 @@ Title: Radio as Medium: Exhibition Catalogue
 
 ----
 
-Description: Catalogue from the touring exhibition exploring radio as an artistic medium, featuring works by 25 sound artists and radio practitioners.
+Cover: 
 
 ----
 
-Content:
-
-This exhibition catalogue documents "Radio as Medium," a touring exhibition that visited six European cities in 2024. It features installations, performances, and interventions that explore radio's potential as an artistic practice. Artists engaged with radio's transmission qualities, its relationship to public space, and its role in community building. Includes essays by media theorists, artist statements, and documentation of all exhibited works. The exhibition was hosted by participating ICRN member stations.
+Media: https://archive.org/details/radio-as-medium-catalogue
 
 ----
 
-Media:
-
--
-  title: View Digital Catalogue
-  url: https://archive.org/details/radio-as-medium-catalogue
-  caption: Full exhibition catalogue with images and essays
+Content: 
 
 ----
 
-Cover:
+Date: 2024-12-05
 
 ----
 
@@ -33,15 +26,19 @@ Tags: Art, Exhibition
 
 ----
 
-Stations:
+Documents: 
 
 ----
 
-Related-resources:
+Stations: 
 
 ----
 
-Date: 2024-12-05
+Related-resources: 
+
+----
+
+Description: Catalogue from the touring exhibition exploring radio as an artistic medium, featuring works by 25 sound artists and radio practitioners.
 
 ----
 

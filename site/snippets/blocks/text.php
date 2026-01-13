@@ -1,3 +1,3 @@
 <div class="space-y-5">
-  <?= $block->text(); ?>
+  <?= $block->text()->kt() ?>
 </div>
