@@ -1,4 +1,4 @@
-Title: Refuge Worldwide
+Title: Refuge Worldwide Long name incoming yes yes yes
 
 ----
 
@@ -14,6 +14,10 @@ Location: Berlin, Germany
 
 ----
 
+Colour: #ff0000
+
+----
+
 Description:
 
 Refuge Worldwide is a radio station, educational platform and event series, operating across two locations in Berlin Neukölln.
@@ -25,6 +29,10 @@ In January 2021 we launched Refuge Worldwide, a radio station to amplify the wid
 We host regular workshops, training programmes and classes in media, creative fields and mental health. These are free to attend as part of our community outreach. Refuge Worldwide is also involved in a number of collaborative projects around the globe with likeminded collectives, radio stations and activists.
 
 In May 2024, we opened a second space at Niemetzstrasse, complete with a fully-equipped music production studio, allowing us to broaden the scope of our educational and event offerings.
+
+----
+
+Pics: - file://iusotq9kmq4sdb66
 
 ----
 

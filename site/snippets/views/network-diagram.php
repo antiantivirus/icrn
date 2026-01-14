@@ -87,9 +87,9 @@ Autoplay
       </g>
     </svg>
 
-    <div>
-      <img class="aspect-4/3 object-cover shadow-green network-image" src="/assets/icrn-mic.jpg" />
-      <p class="mt-1 network-text">&nbsp;</p>
+    <div class="w-full max-w-full min-w-0">
+      <img class="aspect-4/3 object-cover shadow-green network-image w-full" src="/assets/icrn-mic.jpg" />
+      <p class="mt-1 whitespace-nowrap overflow-hidden text-ellipsis network-text">&nbsp;</p>
     </div>
   </div>
 </network-diagram>
