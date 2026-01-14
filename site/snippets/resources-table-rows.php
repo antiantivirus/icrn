@@ -16,22 +16,6 @@
       </a>
     </td>
     <td class="p-4">
-      <?php
-      $stations = $resource->stations()->toPages();
-      if ($stations->isNotEmpty()):
-        $locations = [];
-        foreach ($stations as $station) {
-          if ($station->location()->isNotEmpty()) {
-            $locations[] = $station->location()->esc();
-          }
-        }
-        echo implode(', ', array_unique($locations));
-      else:
-        echo '—';
-      endif;
-      ?>
-    </td>
-    <td class="p-4">
       <?php if ($resource->tags()->isNotEmpty()): ?>
         <div class="flex flex-wrap gap-2">
           <?php
