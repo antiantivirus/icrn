@@ -13,7 +13,7 @@
         <?php foreach ($page->editions()->toStructure()->sortBy('date', 'desc') as $edition): ?>
           <li>
             <a href="<?= $edition->link() ?>" target="_blank" rel="noopener noreferrer" class="hover:underline">
-              <?= $edition->title() ?><?= $edition->date()->toDate("F 'y") ?>
+              <?= $edition->title() ?><?= $edition->date()->toDate("F Y") ?>
             </a>
           </li>
         <?php endforeach ?>

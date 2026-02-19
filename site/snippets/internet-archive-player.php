@@ -11,6 +11,7 @@
 // Get parameters with defaults
 $url = $url ?? '';
 $title = $title ?? null;
+$resourceTitle = $resourceTitle ?? null;
 
 // Extract identifier from URL
 $identifier = null;
@@ -77,20 +78,28 @@ if ($metadata && isset($metadata['files'])) {
 
         // Prioritize MP3 files for audio compatibility
         if (in_array($formatUpper, ['VBR MP3', 'MP3'])) {
+            $fileTitle = isset($file['title']) ? $file['title'] : pathinfo($name, PATHINFO_FILENAME);
+
             $mp3Files[] = [
                 'name' => $name,
                 'format' => $format,
                 'url' => "https://archive.org/download/{$identifier}/" . rawurlencode($name),
-                'title' => isset($file['title']) ? $file['title'] : pathinfo($name, PATHINFO_FILENAME),
+                'title' => $fileTitle,
+                'displayTitle' => $fileTitle,
+                'resourceTitle' => $resourceTitle,
                 'track' => isset($file['track']) ? $file['track'] : null,
                 'length' => isset($file['length']) ? $file['length'] : null,
             ];
         } elseif (in_array($formatUpper, ['OGG VORBIS', 'FLAC'])) {
+            $fileTitle = isset($file['title']) ? $file['title'] : pathinfo($name, PATHINFO_FILENAME);
+
             $otherAudioFiles[] = [
                 'name' => $name,
                 'format' => $format,
                 'url' => "https://archive.org/download/{$identifier}/" . rawurlencode($name),
-                'title' => isset($file['title']) ? $file['title'] : pathinfo($name, PATHINFO_FILENAME),
+                'title' => $fileTitle,
+                'displayTitle' => $fileTitle,
+                'resourceTitle' => $resourceTitle,
                 'track' => isset($file['track']) ? $file['track'] : null,
                 'length' => isset($file['length']) ? $file['length'] : null,
             ];
@@ -121,21 +130,6 @@ if ($metadata && isset($metadata['files'])) {
     }
 }
 
-// If we couldn't get any media files, show a simple link
-if (!$mediaType) {
-?>
-    <p class="mb-4 font-family-mono">Listen on Internet Archive:</p>
-    <a
-        href="<?= $url ?>"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="inline-block px-4 py-2 bg-bright-green border-2 border-black font-bold hover:bg-green transition-colors">
-        Open in Internet Archive ↗
-    </a>
-<?php
-    return;
-}
-
 // Handle different media types
 if ($mediaType === 'audio') {
     // Safely encode tracks for JavaScript
@@ -143,6 +137,19 @@ if ($mediaType === 'audio') {
 
     // Display audio player with playlist
 ?>
+    <style>
+        ia-archive-player {
+            display: block;
+            width: 100%;
+            max-width: 42rem;
+            /* 672px - matches max-w-2xl */
+        }
+
+        ia-archive-player>div {
+            width: 100%;
+        }
+    </style>
+
     <ia-archive-player data-tracks='<?= htmlspecialchars($tracksJson, ENT_QUOTES, 'UTF-8') ?>'>
         <div class="bg-white">
             <!-- Current Track Display -->
@@ -216,7 +223,7 @@ if ($mediaType === 'audio') {
                             <span class="text-xs">${index + 1}</span>
                         </div>
                         <div class="flex-1 min-w-0">
-                            <div class="truncate text-sm">${this.escapeHtml(track.title)}</div>
+                            <div class="truncate text-sm">${this.escapeHtml(track.displayTitle || track.title)}</div>
                         </div>
                     </div>
                 </div>
@@ -278,11 +285,17 @@ if ($mediaType === 'audio') {
                     this.currentTrack = index;
                     const track = this.tracks[index];
 
+                    // Build full title for player (resource + file title)
+                    let playerTitle = track.title;
+                    if (track.resourceTitle && track.title.toLowerCase() !== track.resourceTitle.toLowerCase()) {
+                        playerTitle = track.resourceTitle + ' - ' + track.title;
+                    }
+
                     // Send event to main player
                     window.dispatchEvent(new CustomEvent('ia-player-track', {
                         detail: {
                             url: track.url,
-                            title: track.title,
+                            title: playerTitle,
                             playlist: this.tracks,
                             index: index,
                             resourceUrl: this.resourceUrl

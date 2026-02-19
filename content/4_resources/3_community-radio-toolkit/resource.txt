@@ -18,7 +18,7 @@ Date: 2025-01-10
 
 ----
 
-Color: #01b4ff
+Type: report
 
 ----
 
@@ -26,11 +26,15 @@ Authors: ICRN Collective
 
 ----
 
+Location: 
+
+----
+
 Tags: guide, technical
 
 ----
 
-Documents: 
+Documents: - file://enjewsgupmxyq5ae
 
 ----
 
@@ -43,6 +47,10 @@ Stations:
 ----
 
 Related-resources: - page://res00003communitytoolkit
+
+----
+
+Color: #01b4ff
 
 ----
 

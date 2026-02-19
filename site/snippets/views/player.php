@@ -2,7 +2,7 @@
   hx-get="/random-audio"
   hx-trigger="load"
   hx-swap="none">
-  <div class="player-container relative w-screen md:w-fit md:ml-auto mt-2 overflow-hidden bg-bright-green">
+  <div class="player-container relative w-screen md:w-80 md:ml-auto mt-2 overflow-hidden bg-bright-green">
     <!-- Player controls -->
     <div class="relative flex gap-2 items-center pl-2 py-1">
       <button class="play-button relative z-30 pointer-events-auto">
@@ -13,8 +13,8 @@
       <button class="pause-button relative z-30 pointer-events-auto" style="display: none;">
         <img src="/assets/images/spiral.png" alt="Pause" class="w-6 h-6 motion-safe:animate-spin-slow" />
       </button>
-      <marquee class="relative z-10">Explore our archive</marquee>
-      <a href="#" class="info-button relative z-30 px-2 hover:underline pointer-events-auto" style="display: none;">
+      <marquee class="relative z-10 flex-1 min-w-0">Explore our archive</marquee>
+      <a href="#" class="info-button relative z-30 px-2 hover:underline pointer-events-auto flex-shrink-0">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <circle cx="12" cy="12" r="10" stroke="black" stroke-width="2"/>
           <path d="M12 16V12M12 8H12.01" stroke="black" stroke-width="2" stroke-linecap="round"/>
@@ -241,9 +241,6 @@
       // Update info button
       if (this.infoButton && this.currentResourceUrl) {
         this.infoButton.href = this.currentResourceUrl;
-        this.infoButton.style.display = 'block';
-      } else if (this.infoButton) {
-        this.infoButton.style.display = 'none';
       }
 
       // Reset progress

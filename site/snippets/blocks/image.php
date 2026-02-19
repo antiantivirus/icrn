@@ -3,7 +3,7 @@ $image = $block->image()->toFile();
 ?>
 
 <?php if ($image): ?>
-  <figure class="space-y-3">
+  <figure>
     <?php if ($block->link()->isNotEmpty()): ?>
       <a href="<?= $block->link() ?>" target="_blank" rel="noopener noreferrer">
         <img
@@ -21,7 +21,7 @@ $image = $block->image()->toFile();
     <?php endif; ?>
 
     <?php if ($block->caption()->isNotEmpty()): ?>
-      <figcaption class="text-sm text-gray-600">
+      <figcaption class="text-sm">
         <?= $block->caption()->html() ?>
       </figcaption>
     <?php endif; ?>

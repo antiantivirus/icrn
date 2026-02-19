@@ -8,8 +8,15 @@ columns:
       fields:
         type: fields
         fields:
+          showToc:
+            label: Show Table of Contents
+            type: toggle
+            default: false
+            help: Display a table of contents based on headings
+            width: 1/2
           text:
-            type: textarea
+            label: Content
+            type: blocks
             size: huge
   sidebar:
     width: 1/3

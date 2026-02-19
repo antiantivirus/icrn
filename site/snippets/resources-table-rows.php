@@ -9,11 +9,32 @@
     </td>
     <td class="p-4">
       <a href="<?= $resource->url() ?>" class="font-bold hover:underline flex items-center gap-2">
-        <?php if ($resource->color()->isNotEmpty()): ?>
-          <div class="w-3 h-3 rounded-full flex-shrink-0" style="background: <?= $resource->color() ?>"></div>
-        <?php endif; ?>
+        <?php
+        if ($resource->type()->isNotEmpty()) {
+          $typeColors = [
+            'report' => 'var(--color-bright-green)',
+            'editorial' => 'var(--color-orange)',
+            'broadcast' => 'var(--color-blue)',
+            'sound' => 'var(--color-green)',
+            'visual' => 'var(--color-dark-blue)'
+          ];
+          $color = $typeColors[$resource->type()->value()] ?? null;
+          if ($color):
+        ?>
+          <div class="w-3 h-3 rounded-full flex-shrink-0" style="background: <?= $color ?>"></div>
+        <?php
+          endif;
+        }
+        ?>
         <?= $resource->title()->esc() ?>
       </a>
+    </td>
+    <td class="p-4">
+      <?php if ($resource->location()->isNotEmpty()): ?>
+        <?= $resource->location()->esc() ?>
+      <?php else: ?>
+        —
+      <?php endif; ?>
     </td>
     <td class="p-4">
       <?php if ($resource->tags()->isNotEmpty()): ?>

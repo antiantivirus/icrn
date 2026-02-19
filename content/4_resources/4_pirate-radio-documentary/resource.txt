@@ -38,4 +38,8 @@ Date: 2024-09-20
 
 ----
 
+Type: visual
+
+----
+
 Uuid: res00004pirateradiodoc

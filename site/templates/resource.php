@@ -8,17 +8,32 @@
         <h1 class="blob">
           <?= $page->title() ?>
         </h1>
-        <?php if ($page->color()->isNotEmpty()): ?>
-          <style>
-            h1.blob::before {
-              background: <?= $page->color() ?>;
-            }
-          </style>
-        <?php endif; ?>
+        <?php
+        if ($page->type()->isNotEmpty()) {
+          $typeColors = [
+            'report' => 'var(--color-bright-green)',
+            'editorial' => 'var(--color-orange)',
+            'broadcast' => 'var(--color-blue)',
+            'sound' => 'var(--color-green)',
+            'visual' => 'var(--color-dark-blue)'
+          ];
+          $color = $typeColors[$page->type()->value()] ?? null;
+          if ($color):
+        ?>
+            <style>
+              h1.blob::before {
+                background: <?= $color ?>;
+              }
+            </style>
+        <?php
+          endif;
+        }
+        ?>
         <?php if ($page->media()->isNotEmpty()): ?>
           <section>
             <?= snippet('internet-archive-player', [
-              'url' => $page->media()->value()
+              'url' => $page->media()->value(),
+              'resourceTitle' => $page->title()->value()
             ]) ?>
           </section>
         <?php endif; ?>
@@ -81,9 +96,35 @@
           </div>
         <?php endif; ?>
 
+        <?php if ($page->location()->isNotEmpty()): ?>
+          <div>
+            <span class="meta-label">Location: <?= $page->location()->esc() ?></span>
+          </div>
+        <?php endif; ?>
+
         <?php if ($page->authors()->isNotEmpty()): ?>
           <div>
             <span class="meta-label">Authors: <?= $page->authors()->esc() ?></span>
+          </div>
+        <?php endif; ?>
+
+        <?php
+        $documents = $page->documents();
+        if ($documents && $documents->isNotEmpty()):
+        ?>
+          <div>
+            <span class="meta-label">Documents</span>
+            <div class="space-y-1">
+              <?php foreach ($documents as $document): ?>
+                <a
+                  href="<?= $document->url() ?>"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="block hover:underline">
+                  <?= $document->title()->isNotEmpty() ? $document->title() : $document->filename() ?> ↗
+                </a>
+              <?php endforeach; ?>
+            </div>
           </div>
         <?php endif; ?>
 
@@ -96,6 +137,7 @@
             View on Internet Archive ↗
           </a>
         <?php endif; ?>
+
         <?php
         $relatedStations = $page->stations()->toPages();
         if ($relatedStations->isNotEmpty()):
@@ -129,11 +171,29 @@
                 href="<?= $resource->url() ?>"
                 class="block hover:underline">
                 <div class="flex items-start gap-2">
-                  <?php if ($resource->color()->isNotEmpty()): ?>
-                    <div class="w-4 h-4 rounded-full mt-1 flex-shrink-0" style="background: <?= $resource->color() ?>"></div>
-                  <?php else: ?>
+                  <?php
+                  if ($resource->type()->isNotEmpty()) {
+                    $typeColors = [
+                      'report' => 'var(--color-bright-green)',
+                      'editorial' => 'var(--color-orange)',
+                      'broadcast' => 'var(--color-blue)',
+                      'sound' => 'var(--color-green)',
+                      'visual' => 'var(--color-dark-blue)'
+                    ];
+                    $color = $typeColors[$resource->type()->value()] ?? null;
+                    if ($color):
+                  ?>
+                      <div class="w-4 h-4 rounded-full mt-1 flex-shrink-0" style="background: <?= $color ?>"></div>
+                    <?php
+                    else:
+                    ?>
+                      <div class="w-4 h-4 rounded-full mt-1 flex-shrink-0 bg-black opacity-20"></div>
+                    <?php
+                    endif;
+                  } else {
+                    ?>
                     <div class="w-4 h-4 rounded-full mt-1 flex-shrink-0 bg-black opacity-20"></div>
-                  <?php endif; ?>
+                  <?php } ?>
                   <?= $resource->title() ?>
                 </div>
               </a>
@@ -142,6 +202,23 @@
         <?php endif; ?>
       </aside>
     </div>
+
+    <?php
+    // Get the next resource
+    $resourcesPage = $site->find('resources');
+    if ($resourcesPage) {
+      $allResources = $resourcesPage->children()->listed()->sortBy('date', 'desc');
+      $nextResource = $allResources->indexOf($page) !== false ? $allResources->nth($allResources->indexOf($page) + 2) : null;
+
+      if ($nextResource):
+    ?>
+        <div class="mt-16 pt-8 border-t border-black text-right">
+          <a href="<?= $nextResource->url() ?>" class="inline-flex items-center gap-2 font-bold hover:underline">
+            Next: <?= $nextResource->title()->esc() ?> →
+          </a>
+        </div>
+    <?php endif;
+    } ?>
 
   </div>
 </article>

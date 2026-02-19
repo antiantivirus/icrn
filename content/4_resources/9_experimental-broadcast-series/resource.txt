@@ -45,4 +45,8 @@ Date: 2024-07-18
 
 ----
 
+Type: sound
+
+----
+
 Uuid: res00009experimentalbroadcast

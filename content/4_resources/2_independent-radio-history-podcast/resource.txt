@@ -10,7 +10,7 @@ Media: https://archive.org/details/IvorCutler/A+Miner+is+Approached+by+Ivor+Cutl
 
 ----
 
-Content: [{"content":{"text":"<p>This comprehensive podcast series traces the evolution of independent radio, from the pirate radio stations of the 1960s to today's digital community broadcasters. Each episode features interviews with pioneering radio activists, archival recordings, and analysis of how independent radio has shaped cultural and political movements. Topics covered include the free radio movement in Italy, community radio in the UK, and the rise of internet radio.</p>"},"id":"596e8ee2-1ec4-480e-a0a8-26f79e535088","isHidden":false,"type":"text"},{"content":{"location":"kirby","image":["file://xummcyjs8l1qbrcc"],"src":"","alt":"","caption":"Sink!","link":"","ratio":"","crop":"false"},"id":"e99a38d8-7eba-4ed5-b01f-92432bb5775b","isHidden":false,"type":"image"},{"content":{"text":"This is a nice quote","citation":"someone out there"},"id":"5dadce36-9a37-4059-af62-dc270c82ffc5","isHidden":false,"type":"quote"},{"content":{"level":"h3","text":"Heading head it!"},"id":"b4aa9d5b-4dae-4558-b794-e3eef7133374","isHidden":false,"type":"heading"}]
+Content: [{"content":{"text":"<p>This comprehensive podcast series traces the evolution of independent radio, from the pirate radio stations of the 1960s to today's digital community broadcasters. Each episode features interviews with pioneering radio activists, archival recordings, and analysis of how independent radio has shaped cultural and political movements. Topics covered include the free radio movement in Italy, community radio in the UK, and the rise of internet radio.</p>"},"id":"596e8ee2-1ec4-480e-a0a8-26f79e535088","isHidden":false,"type":"text"},{"content":{"location":"kirby","image":["file://xummcyjs8l1qbrcc"],"src":"","alt":"","caption":"Sink!","link":"","ratio":"","crop":"false"},"id":"e99a38d8-7eba-4ed5-b01f-92432bb5775b","isHidden":false,"type":"image"},{"content":{"text":"This is a nice quote","citation":"someone out there"},"id":"5dadce36-9a37-4059-af62-dc270c82ffc5","isHidden":false,"type":"quote"},{"content":{"level":"h3","text":"Heading head it!","color":null},"id":"b4aa9d5b-4dae-4558-b794-e3eef7133374","isHidden":false,"type":"heading"}]
 
 ----
 
@@ -18,11 +18,7 @@ Date: 2024-11-15
 
 ----
 
-Color: #36b250
-
-----
-
-Authors: Maria Kovács, Alessandro Rossi
+Type: sound
 
 ----
 
@@ -30,7 +26,15 @@ Tags: podcast, history, audio
 
 ----
 
-Documents: 
+Authors: Maria Kovács, Alessandro Rossi
+
+----
+
+Location: Berlin
+
+----
+
+Documents: - file://m4qclrmdgmmpzkfh
 
 ----
 
@@ -39,6 +43,10 @@ Stations:
 ----
 
 Related-resources: 
+
+----
+
+Color: #36b250
 
 ----
 

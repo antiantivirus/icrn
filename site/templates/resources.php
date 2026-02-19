@@ -60,14 +60,16 @@
       <div class="overflow-x-auto">
         <table class="w-full border-collapse table-fixed">
           <colgroup>
-            <col style="width: 18%;">
+            <col style="width: 15%;">
             <col>
+            <col style="width: 15%;">
             <col style="width: 25%;">
           </colgroup>
           <thead>
             <tr class="border-b-2 border-black">
               <th class="text-left p-4 font-bold">Date</th>
               <th class="text-left p-4 font-bold">Title</th>
+              <th class="text-left p-4 font-bold">Location</th>
               <th class="text-left p-4 font-bold">Tags</th>
             </tr>
           </thead>

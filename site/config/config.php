@@ -100,9 +100,17 @@ return [
           $formatUpper = strtoupper($format);
 
           if (in_array($formatUpper, ['VBR MP3', 'MP3', 'OGG VORBIS', 'FLAC'])) {
+            $fileTitle = isset($file['title']) ? $file['title'] : pathinfo($name, PATHINFO_FILENAME);
+
+            // Build display title with resource title if different
+            $displayTitle = $fileTitle;
+            if (strtolower($fileTitle) !== strtolower($randomResource['title'])) {
+              $displayTitle = $randomResource['title'] . ' - ' . $fileTitle;
+            }
+
             $audioFiles[] = [
               'url' => "https://archive.org/download/{$identifier}/" . rawurlencode($name),
-              'title' => isset($file['title']) ? $file['title'] : pathinfo($name, PATHINFO_FILENAME),
+              'title' => $displayTitle,
               'format' => $format
             ];
           }

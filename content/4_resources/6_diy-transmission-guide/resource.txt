@@ -45,4 +45,8 @@ Date: 2024-08-12
 
 ----
 
+Type: report
+
+----
+
 Uuid: res00006diytransmission

@@ -33,3 +33,13 @@ fields:
     type: writer
     inline: true
     placeholder: field.blocks.heading.placeholder
+  color:
+    label: Color
+    type: color
+    width: 1/2
+    options:
+      - "#01b4ff"
+      - "#36b250"
+      - "#f8661b"
+      - "#4653a4"
+      - "#a2ff00"

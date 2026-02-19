@@ -18,6 +18,10 @@ Date: 2024-12-05
 
 ----
 
+Type: visual
+
+----
+
 Authors: Curated by Laura Weber, Emma Schmidt
 
 ----

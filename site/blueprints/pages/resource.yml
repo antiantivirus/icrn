@@ -29,13 +29,23 @@ columns:
       date:
         type: date
         label: Publication Date
-      color:
-        type: color
+      type:
+        type: select
+        label: Type
+        options:
+          report: Report
+          editorial: Editorial
+          broadcast: Broadcast
+          sound: Sound
+          visual: Visual
+      tags:
+        type: tags
       authors:
         type: text
         label: Authors
-      tags:
-        type: tags
+      location:
+        type: text
+        label: Location
       documents:
         type: files
         label: Documents
